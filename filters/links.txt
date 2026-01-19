@@ -1,0 +1,3 @@
+https://www.geo.fu-berlin.de/en/v/soga-py/Advanced-statistics/time-series-analysis/Smoothing/Lowess/index.html
+https://www.weisang.com/en/documentation/loessandlowessalgorithm_en/
+https://en.wikipedia.org/wiki/Smoothing

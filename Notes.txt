@@ -1,0 +1,3 @@
+central limit theorem states that regardless of the distribution of the population, the means of repeated samples drawn from the population have a normal distribution. the mean of sample means approaches the mean of population as the number of samples increase
+
+the standard deviation of the distribution of sample means, also known as the standard error of the mean, will be equal to the standard deviation of the population divided by the square root of the sample size

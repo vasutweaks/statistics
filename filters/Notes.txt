@@ -1,0 +1,29 @@
+with 12 point smoothing, patches of data are missing. why? should min_periods be set to
+6 or something?
+It seems min_period=1 or something is necessary.
+With min_periods=1, even the edges are having data.
+
+invalid values or nan have to filled somehow before employing loess filter
+
+we can specify and output x grid to deliver estimated y values in loess filter
+instead of original xvals
+
+loess filter is used for scatter plots? when both x and y are non linear
+
+loess filter is also an interpolation/extrapolation technique to fill missing values
+
+Simple Moving Average (SMA): SMA may cause edge effects where the
+smoothed data near the edges of the signal may be distorted due to unequal weighting.
+
+rolling mean/moving average of a signal (of width w) is equivalent to doing convolution
+with a box signal of width w
+
+https://stackoverflow.com/questions/13728392/moving-average-or-running-mean
+
+It can be shown that a convolution in time/space is equivalent to the multiplication 
+in the Fourier domain
+
+rectangular smoothing is basic unweighted smoothing
+triangle smoothing is basic weighted smoothing
+
+moving average is commonly used for timeseries analysis?
