@@ -1,0 +1,5 @@
+Write a demo script to demostrate different aspects of signal filtering in python using the scipy library.
+Explain all the theory behind each filtering step
+Use both syntheric data and real data at
+/home/srinivasu/allData/rama/sst
+add an enter pause after every example.

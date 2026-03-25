@@ -1,0 +1,1 @@
+One what factors the width of b_filt, a_filt depends on?
