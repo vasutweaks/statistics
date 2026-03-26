@@ -1,0 +1,3 @@
+https://github.com/markjay4k/fourier-transform/blob/master/
+https://github.com/unpingco/Python-for-Signal-Processing
+https://github.com/nykolai-d/FFT/tree/main

@@ -13,6 +13,4 @@
 *.log
 *.pyc
 *.ipynb_checkpoints
-*.ipynb
 *.html
-*.ipynb
