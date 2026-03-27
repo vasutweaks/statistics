@@ -1,0 +1,4 @@
+Write a python script to plot different form wavelets like
+Morlet
+Mexican hat
+Paul
