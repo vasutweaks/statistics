@@ -1,0 +1,14 @@
+1. The Core Concept Scaling and Translation
+Instead of breaking a signal down
+into infinite sine waves (as in Fourier analysis), the CWT breaks the signal
+down into shifted and scaled versions of a single, finite, localized
+wave—called a Mother Wavelet.The analysis operates on two primary mechanical
+actionsTranslation (τ) Shifting the wavelet along the time axis to
+localize the analysis to a specific moment.Scaling ($s$) Stretching or
+compressing the wavelet.Compressed wavelets (low scale) capture
+high-frequency, short-duration events (like sharp spikes).Stretched wavelets
+(high scale) capture low-frequency, long-duration events (like decadal
+trends or long-period Rossby waves).By systematically translating the
+wavelet across the timeseries at many different scales, you calculate how
+well the wavelet "matches" the signal at every combination of time and
+scale.
