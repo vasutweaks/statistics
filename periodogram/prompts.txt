@@ -1,0 +1,13 @@
+Write a python script to plot different form wavelets like
+Morlet
+Mexican hat
+Paul
+
+Write a python script to plot the continous wavelet spectrum of data at
+/home/srinivasu/allData/rama/sst/sst0n67e_dy.cdf
+by using pycwt package at https://pycwt.readthedocs.io/en/development/
+
+Write a python script to plot timeseries (upper view port) and
+lomb periodogram(lower view port) of data at
+/home/srinivasu/allData/rama/sst/sst0n67e_dy.cdf
+Annotate important periodicities of the with vertical bars.
