@@ -1,0 +1,6 @@
+The full RMS difference is resolved into these two distinct components (overall bias $\bar{E}$ and pattern difference $E'$) which add together quadratically: $E^2 = \bar{E}^2 + {E'}^2$
+RMSE in the taylor diagram is actualy pattern difference RMSE (bias corrected rmse)
+
+We don't supply RMSE at all to add_model_set in gv taylor diagram. To locate point on a taylor diagram model std and correlation are enough.
+
+The std is either normalized std or raw std. We don't need to do normalization of model std if we plotting parameters with same units

@@ -1,0 +1,8 @@
+Write a python script that plots a schematic taylor diagram using geocat-viz package
+https://geocat-viz.readthedocs.io/en/latest/examples/taylor.html
+1. It draws an empty taylor diagram with corr, rmse grids and std lines.
+2. Take a test point on the taylor diagram
+3. Join the test point and origin and label the line sigma f
+4. Join the reference point on the x-axis with origin labeling it sigma r
+5. The line joining the ref point and test point is labelled as E prime
+6. The angle at the origin is labelled as cos inverse R
