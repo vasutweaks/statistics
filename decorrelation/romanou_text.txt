@@ -1,0 +1,1127 @@
+3378
+
+JOURNAL OF CLIMATE
+
+VOLUME 19
+
+Decorrelation Scales of High-Resolution Turbulent Fluxes at the Ocean Surface and a
+Method to Fill in Gaps in Satellite Data Products
+ANASTASIA ROMANOU
+Department of Applied Physics and Applied Mathematics, Columbia University, New York, New York
+
+WILLIAM B. ROSSOW
+NASA Goddard Institute for Space Studies, New York, New York
+
+SHU-HSIEN CHOU
+Department of Atmospheric Sciences, National Taiwan University, Taipei, Taiwan
+(Manuscript received 3 February 2005, in final form 21 October 2005)
+ABSTRACT
+In the first part of the paper, a high space–time resolution (1° latitude/longitude and daily) dataset of the
+turbulent fluxes at the ocean surface is used to estimate and study the seasonal to annual near-global maps
+of the decorrelation scales of the latent and sensible heat fluxes. The decorrelation scales describe the
+temporal and spatial patterns that dominate the flux fields (within a bandpass window) and hence reveal the
+dominant variability in the air–sea interaction. Regional comparison to the decorrelation scales of the
+flux-related variables such as the wind stress, the humidity difference, and the SST identifies the main
+mechanism responsible for the variability in each flux field.
+In the second part of the paper, the decorrelation scales are used to develop a method for filling missing
+values in the dataset that result from the incomplete satellite coverage. Weight coefficients in a linear
+regression function are determined from the spatial and temporal decorrelations and are functions of zonal
+and meridional distance and time. Therefore they account for all spatial and temporal patterns on scales
+greater than 1 day and 1° latitude/longitude and less than 1 yr and the ocean basin scale. The method is
+evaluated by simulating the missing-value distribution of the Goddard Satellite-Based Surface Turbulent
+Fluxes, version 2 (GSSTF2) dataset in the NCEP SST, the International Satellite Climatology Project
+(ISCCP)-FD (fluxes calculated using D1 series) surface radiation, and the Global Precipitation Climatology
+Project (GPCP) datasets and by comparing the filled datasets to the original ones. Main advantages of the
+method are that the decorrelation scales are unrestricted functions of space and time; only information
+internal to the flux field is used in the interpolation scheme, and the computation cost of the method is low
+enough to facilitate its use in similar large datasets.
+
+1. Introduction
+The decorrelation scales of the ocean surface fluxes
+characterize the spatial and temporal variability, the
+pattern evolution, and the statistical significance of air–
+sea interaction phenomena over a wide range of frequencies and wavenumbers. These scales range from
+daily to annual and from mesoscale to global. However,
+due to the significant amount of observations involved
+and the computational cost in estimating these scales at
+
+Corresponding author address: Dr. Anastasia Romanou, Columbia University, 2880 Broadway, New York, NY 10025.
+E-mail: ar2235@columbia.edu
+
+long lags (more than a few weeks and basinwide), decorrelation scales are presently only known regionally and
+for short lags.
+Many studies show that the temporal decorrelation
+scales of sea surface properties differ significantly regionally and vary between 5 days to more than a year.
+They also show that spatial decorrelation scales, ranging from hundreds to thousands of kilometers, are
+anisotropic as they differ significantly in the zonal and
+meridional direction. For example, Chu et al. (2002)
+found less spatial variability in the sea surface temperature (SST) and the sea surface salinity (SSS) decorrelation scales in the summer than in the winter in the
+Japan Sea and associated it with strong seasonality in
+
+© 2006 American Meteorological Society
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+JCLI3773
+
+15 JULY 2006
+
+ROMANOU ET AL.
+
+the net surface heat flux. Temporal scales were shorter
+in the summer than in the winter. Alexander et al.
+(2001) explained the strong autocorrelation (and thus
+the decorrelation patterns) in the SST anomaly from
+winter to winter in the North Pacific Ocean by the
+shoaling of the annual mixed layer. Molinari and Festa
+(2000) estimated such scales from the Comprehensive
+Ocean–Atmosphere Data Set (COADS) in the Tropics
+and found that they differ significantly in the zonal
+(600–1400 km) and meridional (300–700 km) directions
+with longer scales in the tropical Pacific. Lagerloef and
+Delcroix (1999) found dominant scales of 70–90 days
+and 200–400 km for the SSS in the western Pacific warm
+pool. Borzelli and Ligi (1999) related short decorrelation scales of SST to strong seasonality in upwelling in
+the south Adriatic Sea. Tanaka (1997) showed that the
+Niño-3 SST exhibits a biennial oscillation. Kessler et al.
+(1996) found 5–100-day time scales in the equatorial
+Pacific and spatial scales of half the width of the Pacific.
+The meridional scales in the eastern equatorial Pacific
+were longer than in the western equatorial Pacific and
+were associated with the extension of the equatorial
+cold tongue. Ikeda (1993) estimated 50-day scales from
+the sea surface height in the separation region of the
+Gulf Stream. The spatial scales along and across the
+current were 120 and 150 km, respectively. From an
+optimal XBT network, Sprintall and Meyers (1991)
+found scales of 60 days and 300 and 1500 km in the
+meridional and zonal direction, respectively, in the
+eastern Pacific.
+Some of these studies (Alexander et al. 2001; Borzelli
+and Ligi 1999; Ikeda 1993) as well as Polito et al. (2000)
+suggest that satellite observations, which measure
+ocean surface fluxes both at high resolution in space
+and time and over a very wide range of scales, are
+particularly useful in constructing detailed decorrelation maps for these fluxes. However, satellite observations usually have some missing values at points that lie
+outside the tracks of the satellite view. Although missing values do not affect the construction of the decorrelation maps (as long as they are not too numerous),
+they have to be filled in since, in some applications such
+as ocean model forcing, missing values are not acceptable. Filling in gaps is usually done through lower or
+higher order interpolation techniques (Polito et al.
+2000; and references therein). In the present paper we
+describe a filling method based on the information provided by the spatial and temporal decorrelation maps of
+high-resolution ocean surface turbulent fluxes.
+The dataset we use is the Goddard Satellite-Based
+Surface Turbulent Fluxes version 2 (GSSTF2) (Chou et
+al. 2003) dataset, which represents one of the very few
+observations of the ocean surface turbulent fluxes at
+
+3379
+
+high resolution (1° latitude/longitude and daily), covering a long period (1987–2000), and useful in the study of
+air–sea interactions across the globe (cf. Curry et al.
+2004). The gaps in it are irregularly large in time and
+space but sufficiently few to allow for estimation of the
+decorrelation scales.
+In the following, the GSSTF2 dataset is described in
+section 2, and the decorrelation scales of the turbulent
+fluxes are computed from the original dataset and analyzed in section 3. A method for filling the gaps in the
+dataset based on the decorrelation scales is presented
+and tested in section 4, and finally some conclusions are
+offered in section 5.
+
+2. The dataset
+The GSSTF2 dataset (available from Goddard Earth
+Sciences Data and Information Services Center; Chou
+et al. 2003) contains near-global (approximately 60°S–
+60°N ocean; 1° latitude/longitude) gridded values of
+surface fluxes and some related quantities based mainly
+on Special Sensor Microwave Imager(SSM/I) data from
+the Defense Meteorological Satellite Program (DMSP)
+F8, F10, F11, F13, and F14 satellites, combined with the
+air temperature and SST of the National Centers for
+Environmental Prediction–National Center for Atmospheric Research (NCEP–NCAR) reanalysis (Kalnay
+et al. 1996). It covers a 13.5-yr period from July 1987
+through December 2000. The product used here includes the latent and sensible heat fluxes, the nearsurface air (10 m) specific humidity, the zonal and meridional wind stress, the precipitable water in the lowest
+500 m, the 10-m wind speed, and the air–sea temperature and humidity differences.
+Specifically, the product was computed from
+1) the SSM/I 10-m wind speed, derived by Wentz (1997);
+2) the wind stress direction taken from the 10-m wind
+field, which was derived from ship and buoy measurements and the NCEP–NCAR reanalysis based
+on Atlas et al. (1996);
+3) the air–sea temperature difference of NCEP–
+NCAR reanalysis;
+4) the SSM/I 10-m air specific humidity, which was derived from the water vapor amounts in the total atmospheric column and the lowest 500 m (Chou et al.
+1995, 1997); the former was taken from Wentz
+(1997), while the later was derived from SSM/I radiances using the method of Schulz et al. (1993); and
+5) the air–sea humidity difference, which was derived
+from the 10-m specific humidity and the NCEP–
+NCAR reanalysis SST (5-day means), including a
+2% reduction in saturation specific humidity at SST
+due to the salinity effect.
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+3380
+
+JOURNAL OF CLIMATE
+
+The dataset has missing values at high latitudes in the
+presence of sea ice or when precipitation does not allow
+for the retrieval of precipitable water in the lowest 500
+m (Chou et al. 1997). We do not assess the quality of
+the GSSTF2 dataset here, as this has been done by
+others through comparison to 10 high-quality field experiments during 1991–99 and against other turbulent
+flux products (Chou et al. 2003, 2004). We instead focus
+on the variability of the turbulent fluxes in GSSTF2
+since this dataset (at the time this study took place) had
+the highest resolution both temporally and spatially
+among similar products (Seaflux Group; Curry et al.
+2004). We do, however, discuss the effects that possible
+shortcomings in the dataset may have on the representation of this variability.
+The GSSTF2 dataset contains missing values due to
+SSM/I coverage, precipitation, and sea ice that were
+originally filled in the monthly mean and annual-mean
+climatologies using the 8-nearest-point distancesquared spatial interpolation method. The nature of
+these voids is described and another method for interpolating the missing values is offered in section 4. In the
+same section, the method is tested in other datasets
+such as the International Satellite Climatology Project
+(ISCCP)-FD surface shortwave downward radiation,
+the NCEP SST, and the daily Global Precipitation Climatology Project (GPCP) precipitation field that contain no voids.
+
+3. Decorrelation scales of the turbulent fluxes
+In this section we describe how the decorrelation
+scales are computed and we discuss their regional and
+seasonal variation. Comparisons are made between the
+latent and sensible heat flux scales and the scales of
+flux-related variables such as the wind stress, the air–
+sea humidity difference, and the SST.
+The autocorrelation function, ␳(m), of a discrete data
+series { fi}, evaluated at data points i ⫽ 1, . . . , N, is
+
+␳共m兲 ⫽
+
+1
+N⫺m
+
+N⫺m⫺1
+
+兺 共 f ⫺ f 兲共 f
+i
+
+i⫹m ⫺ f 兲,
+
+共1兲
+
+i⫽1
+
+where m is the lag, N is the total number of data points,
+and f is the sample mean. Equation (1) describes the
+dependence of the flux fi on the flux fi⫹m at points that
+are m lags apart. The decorrelation scale is defined here
+as the lag m0 of the first zero-crossing of the autocovariance function of the series, which is the autocorrelation function divided by the variance, that is, ␳(m)/
+␳(0). This choice for the definition of the decorrelation
+scale is not unique, but it is the most common in literature. In general the shape of the autocorrelation function is different from one point to another, and in prin-
+
+VOLUME 19
+
+ciple one has to approximate it with a parametric equation for more precise decorrelation-scale definitions.
+Because higher-order parametric fitting may impose a
+heavier computational burden while not improving the
+result significantly, we choose the “zero crossing” definition for this study that does not take into account the
+shape and therefore yields an upper limit in the estimation of the scales. The upper limit expresses the distance or time scale beyond which there is no longer
+dependence between values of the series; therefore
+these scales represent the lowest-frequency variability
+at each point.
+Since the series is in general a function of both time
+and space, the decorrelation scales can be computed
+independently in time and space, separately for the
+zonal and meridional directions. The physical interpretation of the decorrelation scale is that at smaller scales
+than the decorrelation scale the flux changes are correlated and at larger scales they are uncorrelated. In the
+context of our estimates, large (small) temporal decorrelation scales express slow (fast) flux changes and are
+associated with persistent (ephemeral) structures or
+low (high) frequencies. Similarly, large (small) spatial
+decorrelation scales express flux changes over a large
+(small) distance and can be taken as an indication of
+continuous (fragmented) structures or large (small)
+wavelengths. Von Storch and Zwiers (1999) point out
+that the decorrelation scale depends heavily on the
+sampling time (which for the GSSTF2 dataset is daily)
+since scales less than the sampling time cannot be resolved. Similarly, scales at or longer than the measurement period (here 1 yr) cannot also be resolved. However, von Storch and Zwiers point out that “comparison
+between timeseries with the same sampling interval
+helps us identify which processes have larger memory”
+(von Storch and Zwiers 1999, 371–374), which is exactly
+the point of the present analysis.
+In this study, the annual temporal scales of the turbulent fluxes from the GSSTF2 dataset are computed
+first for every year between 1989 and 2000 and for daily
+lags at each grid point. The decorrelation scales are
+then averaged over the 12-yr period: this product will
+be hereafter referred to as the “yearly scales.” We
+therefore focus on scale variations that range from a
+couple of days up to one year. Second, we compute the
+temporal decorrelation scales from records that span
+each season for every year between 1989 and 2000. We
+again average over the 12-yr period and this product,
+referred to as the “seasonal” decorrelation scales, describes the intraseasonal part of the spectrum. Studies
+suggest that there is high correlation in the tropical
+regions for lags longer than 1 yr (interannual) (Alexander et al. 2001), but here, only scales less than 1 yr are
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+15 JULY 2006
+
+ROMANOU ET AL.
+
+discussed. The spatial scales, similarly, are computed
+along the zonal and meridional directions separately
+and for each year between 1989 and 2000. Land mask
+and missing value points are excluded. Record means
+are constructed based on the 12-yr period and the final
+products are divided into four seasons.
+There is no limit imposed on either spatial or temporal lags; thus all scales (greater than 1° and 1 day and
+less than the major oceanic basin scale and a year or a
+season) of features are included. In the following, when
+discussing temporal decorrelation scales, the terms
+longer (shorter) scales refer to lower (higher) frequency variability and, when discussing spatial decorrelation scales, the terms larger (smaller) scales refer to
+lower (higher) wavenumber variability.
+Next, the decorrelation scales of the latent and sensible heat fluxes at the surface of the ocean from the
+GSSTF2 dataset are computed and compared to the
+decorrelation scales of the wind stress, the humidity,
+and the sea surface temperature. The geographical and
+temporal structures of all the decorrelation scales are
+also described and discussed.
+
+a. Temporal scales of latent and sensible heat fluxes
+The latent heat flux, L, in the GSSTF2 dataset is
+computed by the bulk aerodynamic formula (Chou 1993):
+L ⫽ ␳L␷CE共U ⫺ Us兲共q ⫺ qs兲,
+
+共2兲
+
+where ␳ is the air density, L␷ ⫽ the latent heat of vaporization ⫽ 2.5 ⫻ 106 J kg⫺1, and U and q are the wind
+speed and the specific humidity at the reference height.
+The wind speed at the sea surface, Us, is very small and
+taken to be 0.55 of the friction velocity u , and qs, the
+*
+specific humidity at sea surface, is the saturation value
+of the sea surface temperature corrected for mean salinity. The transfer coefficient CE in Eq. (2) depends on
+the atmospheric stability functions (determined from
+the reference height, wind speed, and air–sea temperature and humidity differences) and the surface roughness lengths of momentum and moisture. It is computed based on the Monin–Obukhov surface layer similarity theory [as described in the Chou (1993) and Chou
+et al. (2003) papers about the GSSTF2 development
+process].
+
+1) YEARLY DECORRELATION SCALES
+The yearly temporal decorrelation scales of the latent
+heat flux (Fig. 1a) show significant regional variance
+with scales up to 1 yr. Since wind and air–sea humidity
+difference determine latent heat flux [Eq. (2)], their
+variability can reveal the dominant cause of the variation of the evaporative processes regionally.
+
+3381
+
+The longest time scales in the latent heat flux (⬃90
+days) are found in the equatorial regions of all the
+ocean basins (Fig. 1a), implying that the variability
+there is mainly intraseasonal. Comparison with the
+wind stress scales shows that the dominant cause of the
+slower variations of evaporation in the intertropical
+convergence zone (ITCZ) between 0° and 10°N, in the
+western Pacific warm pool, and in the Atlantic Ocean is
+the persistent and unidirectional trade winds system
+(also exhibiting long decorrelation scales of 90 days in
+Fig. 1c). The meridional winds vary on 60-day scales in
+the western Pacific warm pool (Fig. 1d). Such periods of
+variability that are found here (given that they represent upper limits of the observed variability; see section
+3) are consistent with periods usually identified with the
+Madden–Julian oscillation [MJO: 30–60 days, as in
+McPhaden (1999) and Takayabu et al. (1999)]. In fact,
+in the western tropical Pacific zonal wind stress variability controls the latent heat flux changes as the similar scales there imply. In the eastern Pacific, between
+150° and 100°W at the equator, the wavelike features in
+the meridional wind (Fig. 1d) with spatial scales of
+about 1500 km and time scales between 60 and 90 days
+are associated with tropical instability waves (Polito
+and Sato 2003; Chelton et al. 2001).
+Elsewhere in the Tropics, long decorrelation scales
+are associated with intraseasonal variability in the latent heat flux and air–sea humidity difference (Figs. 1a
+and 1e). They occur near the mouth of the Congo River
+in coastal western Africa (around 10°S, 5°–20°W) and
+in the South Pacific (0°–10°S). These are regions of
+extensive and persistent cloud cover (low marine stratocumulus clouds in western Africa and western South
+America) or high thick clouds as in the ITCZ in the
+eastern Pacific and western Central America based on
+the ISCCP cloud climatology (Rossow and Schiffer
+1999) and high precipitation rates (Adler et al. 2003).
+However, Figs. 1c, 1d, and 1e also show 50–90-day
+scales in the Arabian Sea and the Bay of Bengal, which
+are not associated with analogous long decorrelation
+scales in the latent heat flux (5–30-day scales). In these
+regions, evaporation is highly variable but winds and
+humidity are not. Figure 2 explains why this is so. The
+zonal wind and the humidity difference time series in
+this region are nearly 90° out of phase (Fig. 2) and thus
+low frequency variability in the evaporation caused by
+these two factors cancels out so that higher frequency
+variability dominates.
+Along the storm tracks in the Northern Hemisphere
+(northwest Atlantic between 30° and 60°N; northwest
+Pacific between 30° and 60°N), large transient disturbances cause high frequency variability in the winds
+(ⱕ30 days; Figs. 1c and 1d). However, high persistence
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+3382
+
+JOURNAL OF CLIMATE
+
+VOLUME 19
+
+FIG. 1. Yearly temporal decorrelation scales (in days) for (a) latent heat flux (W m⫺2), (b) sensible heat flux (W m⫺2), (c) zonal wind
+stress (N m⫺2), (d) meridional wind stress (N m⫺2), (e) air–sea humidity difference (g kg⫺2) from the GSSTF2 dataset, and (f) SST (°C)
+from the NCEP–NCAR reanalysis.
+
+of clouds in these regions (Rossow and Schiffer 1999)
+and lasting humidity patterns (Fig. 1e) at 40–70-day
+scales imply that flux exchanges between ocean and
+atmosphere locally are more important than largerscale wind effects; therefore humidity variations are
+mostly responsible for the variability in the evaporative
+patterns.
+The shortest scales in the latent heat flux variability
+(ⱕ20 days) are found in the equatorial cold tongue (0°–
+10°S, 80°–120°W) due to local upwelling in connection
+with high variability of the winds there (Figs. 1c and
+1d). Other regions of high variability are over the oceanic subtropical gyres and the eastern parts of the subpolar gyres. There, the dominant scales are set by the
+
+wind stress since both components (Figs. 1c and 1d)
+vary at slightly shorter scales than humidity (Fig. 1e).
+The region south of 20°S is characterized by significantly shorter scales (ⱕ25 days) in all of the fields in
+Fig. 1 compared to the Northern Hemisphere, as was
+also indicated by Barnston (1996). In the Northern
+Hemisphere, land masses and orography impose larger
+scales on the atmospheric circulation in the form of
+standing planetary waves with wavenumbers ⱕ3, but in
+the Southern Hemisphere higher wavenumbers imply
+that higher frequency variability dominates.
+Relatively long scales (40–60 days) in the latent heat
+flux are found southwest of Australia in the Indian
+Ocean (near the Amsterdam Islands) and are associ-
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+15 JULY 2006
+
+3383
+
+ROMANOU ET AL.
+
+FIG. 2. Time series of the area-averaged (a) latent heat flux (W m⫺2), (b) zonal wind stress
+(N m⫺2), and (c) humidity difference (g kg⫺2) in the Arabian Sea region (0°–30°N and
+20°–95°W) from the GSSTF2 dataset.
+
+ated with similarly long scales in the zonal wind stress
+there (Fig. 1c).
+The yearly decorrelation scales in Fig. 1 resulted
+from averaging the decorrelation scales for each year
+between 1989 and 2000. The standard deviation of all
+yearly scales ranges between 20 and 30 days in the regions 2°–10°N and 2°–10°S in the East Pacific and along
+10°S and 70°–80°W in the Indian Ocean and between
+10 and 20 days in the rest of the ocean, implying that the
+averages shown in Fig. 1 are good estimates.
+The sensible heat flux, H, in the GSSTF2 dataset is
+computed by the bulk formula,
+H ⫽ ␳CpCH共U ⫺ Us兲共␪s ⫺ ␪兲,
+
+共3兲
+
+where Cp is the isobaric specific heat, ␪s and ␪ are the
+sea surface and air (potential) temperatures respectively, and U and Us are the wind speed at the reference
+height and at the surface, respectively (Chou 1993).
+Similar to Eq. (2), the transfer coefficient CH is computed based on the surface layer Monin–Obukhov similarity theory (Chou 1993; Chou et al. 2003): CH depends
+on the atmospheric stability functions determined from
+the reference height, wind speed, air–sea temperature
+and humidity differences, and surface roughness
+lengths of momentum and sensible heat. Similar to the
+analysis on the latent heat flux, the relative roles the
+
+wind and SST played in the determination of the sensible heat flux variability are evaluated below.
+The lowest frequency variability in the sensible heat
+flux is found in the equatorial eastern Pacific, the equatorial South Atlantic, and the Arabian Sea, as shown in
+Fig. 1b. In the eastern Pacific such large scales (60–90
+days) are mostly associated with the meridional wind
+stress variability shown in Fig. 1d and the SST variability shown in Fig. 1f. Off the coast of Peru and northern
+Chile, the lower frequencies (longer scales) are associated with persisting SST signatures. Near the coast this
+is due to coastal upwelling. In the equatorial Atlantic,
+the low frequency variability (around 60 days) is associated with zonal winds and SST and is linked to upwelling along the African coast. In the Arabian Sea, the
+longer scales are attributed to wind changes when light
+and cold air blows over warm water.
+Large time scales are also found along the Northern
+Hemisphere storm tracks (northwest Atlantic and Pacific Oceans between 30° and 60°N) and they are mostly
+attributed to slow changes in SST (Fig. 1f). This is the
+result of the 5-day averaging in the NCEP SST product.
+Cold continental air outbreaks sweep over warm ocean
+in winter and cause large temperature differences, intense cooling, and high sensible heat fluxes to occur.
+Similar to the latent heat, the sensible heat flux exhibits larger variability in the Southern Hemisphere.
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+3384
+
+JOURNAL OF CLIMATE
+
+VOLUME 19
+
+FIG. 3. Scatterplots of the area-averaged decorrelation scales. The horizontal axes are everywhere latent heat flux scales
+(in days) and the vertical axes are the scales (in days) of the following variables, ⌬: humidity difference, *: zonal wind
+stress, 䊊: meridional wind stress, and ⵧ: SST. The areas are (a) Arabian Sea (10°S–30°N, 20°–120°W), (b) Atlantic
+stratocumulus (20°S–0°, 20°E–20°W), (c) storm tracks (30°⫺90°N, 180°–180°), (d) warm pool (0°–20°N, 120°W–180°), (e)
+Pacific stratocumulus (10°S⫺0°, 150°⫺60°E), and (f) Niño-3 (5°N⫺5°S, 150°⫺90°E). The dark solid line represents the
+1:1 change. Data points below this line represent higher variability (shorter scales) than that of the latent heat flux while
+data points above that line represent variability at longer scales (lower frequencies) than latent heat flux.
+
+2) INTERANNUAL VARIABILITY
+In this section we examine how the intraseasonal signals in the fluxes described in the previous section vary
+from year to year and regionally. Figure 3 shows crossscatter diagrams of the decorrelation scales in different
+regions. Each point pairs the latent heat flux scales with
+those of an independent variable, like wind stress, humidity difference, or SST. The horizontal axis in each
+plot is the latent heat flux scale and the vertical axis is
+independent variable scale. The straight line represents
+variability at the latent heat flux scales (this is the line
+that bisects the diagram). Points below (above) this line
+show higher (lower) frequency variability than that of
+the latent heat flux. The statistical properties of the
+distributions are synopsized in Table 1. In the Arabian
+Sea (Fig. 3a) the latent heat flux varies at shorter scales
+than all of the variables including SST, as was also
+
+shown earlier (Fig. 2). There is not large interannual
+variability in the scale relations in this region as it is
+expressed by the standard deviation from the means
+shown in Table 1. The humidity difference variability is
+closer to that of evaporation. In the Atlantic stratocumulus region and the boreal storm track regions (Figs.
+3b and 3c, respectively), humidity variability better correlates with that of evaporation. Both wind components
+vary at lower frequencies, while SST varies at much
+higher frequency. These scale relations vary little from
+year to year (Table 1). In the warm pool area (Fig. 3d),
+humidity difference variability is shifted to lower frequencies, while wind and SST variability is shifted to
+higher frequencies. The interannual signal here is large
+(Table 1). In the Pacific stratocumulus region (Fig. 3e),
+humidity interannual variability is better correlated to
+that of evaporation during most of the years in this
+study, while wind variability is shifted to lower frequen-
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+15 JULY 2006
+
+3385
+
+ROMANOU ET AL.
+
+TABLE 1. Mean distances (in days) from the angle bisector line of the data points shown in the cross-scatterplot of the independent
+variable (left column) vs latent heat flux L for the regions shown in Fig. 3; standard deviations from the means are shown in parentheses.
+Positive (negative) mean distances correspond to decorrelation scales that are longer (shorter) than those of the latent heat flux.
+
+Zonal wind stress
+Meridional wind stress
+Humidity difference
+SST
+
+Arabian Sea
+
+Atlantic Sc
+
+Storm track
+
+Warm pool
+
+Pacific Sc
+
+Niño-3
+
+21 (3)
+22 (3)
+9 (4)
+24 (6)
+
+⫺22 (4)
+⫺25 (4)
+6 (2)
+25 (6)
+
+⫺24 (3)
+⫺32 (3)
+⫺1 (1)
+25 (3)
+
+7 (5)
+10 (7)
+⫺8 (6)
+31 (6)
+
+⫺10 (8)
+⫺8 (6)
+⫺0.2 (6)
+28 (13)
+
+⫺5 (7)
+13 (6)
+3 (5)
+32 (18)
+
+cies. The interannual variability is large (Table 1). Finally, in the Niño-3 region, zonal and meridional wind
+components vary at higher and lower frequencies, respectively, than latent heat flux (Fig. 3f), while humidity difference changes at similar scales but the interannual variability is large (Table 1).
+Further, focusing on the interannual variability in the
+Niño-3 area (5°N–5°S, 150°–90°E; Fig. 4), the decorrelation scales differ significantly between El Niño and La
+Niña years, implying that distinct scales of variability
+dominate in each regime. Several studies attribute the
+onset or the termination of an El Niño event to the
+MJO, which has typical periods of 30–60 days. Westerly
+wind bursts associated with the MJO might be responsible for the initiation of El Niño events (McPhaden
+1999), while intensification of easterly trade winds also
+associated with MJO might cause termination of El
+Niño events (Takayabu et al. 1999). In the GSSTF2
+dataset, three El Niño events are captured (1992, 1995,
+and 1998) and four La Niña events (1989, 1994, 1997,
+and 2000). During El Niño years, latent heat flux, zonal
+wind, and air–sea humidity difference exhibit high frequency variability at scales less than 25–40 days (Fig. 4),
+
+which is at the lower limit of the MJO period. On the
+other hand, La Niña years exhibit low frequency variability at scales of 50–70 days that is at the upper limit
+of the MJO period. The two regimes are well separated
+in the spectra of these quantities. Normal conditions in
+the Niño-3 region encompass variability between the
+two regimes. On the other hand, although SST variability is dominated by low frequencies (110–125 days) during El Niños and higher frequencies (70–85 days) during La Niñas, the sensible heat flux does not exhibit a
+clear separation between the two regimes (Fig. 4).
+Moreover, all El Niños are not the same: In the 1992
+El Niño, sensible heat flux shows particularly slow variability (80 days) due to very slowly varying SST (Fig. 4),
+but in the other two El Niños (1995 and 1998) the variability has a higher frequency (50–60 days), which is
+probably associated with the variability in the air temperature rather than the SST. However, air–sea humidity difference variability is dominated by even shorter
+scales (32–38 days) during all El Niños and longer
+scales (50–80 days) during La Niñas. Zonal wind and
+latent heat flux do not exhibit a clear scale separation
+between the El Niño and La Niña events.
+
+3) SEASONAL DEPENDENCE
+
+FIG. 4. Yearly temporal decorrelation scales (in days) for latent
+and sensible heat fluxes and the related variables (zonal wind
+stress, air–sea humidity difference, and SST) in the Niño-3 region
+(5°N⫺5°S, 150°⫺90°E).
+
+Next, we focus on the intraseasonal-scale variability
+by analyzing regionally the decorrelation scales averaged for the 3-month periods: DJF, MAM, JJA, and
+SON (see section 3). Several studies have shown that
+there is a significant seasonal signal in the ocean surface
+decorrelation scales regionally. Barnston (1996) found
+that more variability occurs during winter in most locations worldwide, and Chu et al. (2002) found shorter
+time scales (i.e., higher-frequency variability) in the
+summer in the Japan Sea. Here, the seasonal change in
+the latent heat flux scales is shown in Fig. 5.
+In the Tropics, shorter scales occur between September and February (2–15-day scales) and more during
+the spring and summer months (12–20-day scales). The
+marine stratocumulus regions in the equatorial Atlantic
+and Pacific show 15–20-day scales in all four seasons,
+particularly during spring (MAM, Fig. 5b). The strong
+persistence of evaporation found along the storm tracks
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+3386
+
+JOURNAL OF CLIMATE
+
+VOLUME 19
+
+FIG. 5. Seasonally averaged temporal decorrelation scales (in days) for the latent heat flux in each season: (a) DJF, (b) MAM, (c)
+JJA, and (d) SON.
+
+in the Northern Hemisphere (Fig. 1a) occurs predominantly in the spring (MAM, Fig. 5b) and at scales ranging between 10 and 20 days. Possibly due to the greater
+thermal inertia of the ocean, the difference between the
+oceanic and atmospheric conditions is greater in the
+spring. The longer subseasonal scales (15–30 days) in
+the Arabian Sea are found particularly in summer (Fig.
+5c) and the shortest in winter (Fig. 5a). The Southern
+Hemisphere, as discussed earlier, is subject to higher
+frequency variability (5–10-day scales) throughout the
+year. Off southwest Australia, locally longer scales occur during SON (Fig. 5d).
+The seasonal dependence of the sensible heat flux is
+similar to that of the latent heat flux (Fig. 6). The equatorial upwelling region in the eastern Pacific shows
+greater variability (5–10 days) during spring (Fig. 6b)
+and lower variability (15–20 days) during winter and
+summer (Figs. 6a and 6c, respectively). The storm
+tracks show lower variability during spring and fall (15–
+20 days), particularly in the northwest Pacific. The Arabian Sea scales are longer (low frequency variability)
+during summer and fall.
+
+b. Spatial scales of latent and sensible heat fluxes
+Similar to the temporal scales, zonal and meridional
+decorrelation scales are computed as functions of day
+
+of year and longitude or latitude, respectively. Spatial
+scales can then be constructed by averaging over each
+season (DJF, MAM, JJA, and SON) and projecting
+onto the same map (Fig. 7).
+Sensible heat flux scales are generally larger than
+those of latent heat flux owing to the smoothness in the
+air–sea temperature difference (attributed to the 5-dayaveraged NCEP SST) but are qualitatively very similar
+to the latent heat flux scales; thus are not shown here.
+In contrast to the temporal scales, boreal spatial scales
+are shorter than austral scales owing to the landmass
+distribution in the Northern Hemisphere, which restricts the scales found there.
+Spatial patterns are more coherent in the zonal than
+in the meridional direction, particularly during the transition seasons MAM and SON and in the tropical and
+subtropical regions (Figs. 7b and 7d). Exceptions are
+the boreal storm track regions and the South Pacific
+Ocean during winter and summer seasons (DJF and
+JJA, Figs. 7a and 7c) where the spatial patterns are
+more meridionally oriented.
+The largest scales, and hence the largest spatial coherence, are found in the trade wind band in the equatorial regions, particularly during DJF (3000–4000 km
+for the latent heat flux in Fig. 7 and 5000–6000 km for
+the sensible heat flux; not shown). That sensible heat
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+15 JULY 2006
+
+3387
+
+ROMANOU ET AL.
+
+FIG. 6. As in Fig. 5 but for the sensible heat flux.
+
+4. A method for filling the missing values
+
+scales, the temporal, zonal, and meridional scales, in
+order to account for variability in time and space. It has
+been shown that methods for filling the gaps based on
+autocorrelations work best if the coefficients are computed at each grid point and at each daily lag (Polito et
+al. 2000). In the DBI method, where the decorrelation
+scales are computed from the distribution of the autocorrelation functions, each flux (i.e., latent, sensible,
+wind stress, and air–sea humidity difference) is dealt
+with separately.
+The distribution of the gaps in the GSSTF2 dataset is
+not uniform in space or time. These voids tend to be
+mostly latitudinally elongated (up to 40° in the north–
+south direction) rather than longitudinally (up to 20° in
+the east–west direction). There is no seasonal or regional tendency in their occurrence and they occasionally appear to “move” eastward. On any day they cover
+5%–10% of the ocean, and the longest absence for any
+given point is 25 days. However, the majority of the
+points is observed within 5–7 days. The number of gaps
+decreases with time as more satellites are used for the
+data retrieval.
+The DBI method is completed in the following steps:
+
+In this section we describe a decorrelation-based interpolation (DBI) method for filling missing values in
+the GSSTF2 dataset. This method utilizes all three
+
+1) Temporal decorrelation scales are computed at each
+grid point for daily lags up to 1 yr and for each year
+between 1989 and 2000. The spatial decorrelation
+
+flux spatial scales are larger than the latent heat flux
+scales in the trade wind region is related to the fact that
+SST is more smooth there (see section 2).
+The upwelling region in the eastern Pacific has generally smaller scales during MAM and JJA (2700 km),
+which is attributed to the smaller-scale patterns in the
+wind system.
+The northwest Atlantic and Pacific Ocean storm
+track scales are smaller (500–2000 km in the latent heat
+flux and 1500–2500 km in the sensible heat flux) and are
+more zonally oriented during the transition seasons
+MAM and SON. Chu et al. (2002) found less spatial
+variability in the Japan Sea in the summer than in the
+winter, in agreement with what is shown here. The
+storm track spatial variability follows mostly that of the
+humidity patterns.
+Southern Ocean regions have larger scales during
+DJF and MAM seasons and smaller scales during JJA
+and SON due to analogous scales in the humidity patterns.
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+3388
+
+JOURNAL OF CLIMATE
+
+VOLUME 19
+
+FIG. 7. Seasonal variation of the spatial decorrelation scales (in kilometers) for the latent heat flux in (a) DJF, (b) MAM, (c) JJA,
+and (d) SON.
+
+scales (in the zonal and meridional directions) are
+also computed for spatial lags of 1° latitude/
+longitude up to the basin scale. The empty points
+(over land and/or due to satellite coverage) are not
+included in this calculation.
+2) For each missing value we locate the two nearest
+existing neighbors upstream and downstream (in
+space or in time). We examine one direction at a
+time (zonally, meridionally, or in time). We only
+take into account points that fall within the decorrelation scale along this direction and estimate the
+distance from the missing value point. If no upstream or downstream neighbors exist (as in starting/ending points or near land boundaries) we assume that the weights in the regression function are
+zero (see below).
+3) We compute the weights in the interpolation
+scheme. If ⌬x, ⌬y, and ⌬t are the decorrelation
+scales along the zonal, meridional, and temporal directions, respectively, the weights of the nearest upstream and downstream existing neighbors are
+wi ⫽ 1 ⫺
+
+␦i
+共⌬t, ⌬x, ⌬y兲
+
+,
+
+i ⫽ 1, . . . , 6,
+
+共4兲
+
+where ␦i is the time period or the distance between
+the point to be filled and its nearest upstream and
+
+downstream neighbors. To maintain physical meaning and conserve quantities, weights must be between 0, for points that lie beyond one decorrelation
+scale away, and 1, for points that lie at a distance
+much smaller than the decorrelation scale (␦i ⬃ ⌬x;
+i.e., ⌬x → ⬁). Then, the flux at the missing point is
+6
+
+FO共x, y, t兲 ⫽
+
+冒
+
+6
+
+兺 w F 共x, y, t兲 兺 w .
+i i
+
+i⫽1
+
+i
+
+共5兲
+
+i⫽1
+
+Missing values on land or from already-filled points
+are not included in the computation of the flux at
+other points.
+The advantage of the present method is that we use
+the same dataset to extract information about variability (i.e., decorrelation scales) independent of the number of gaps (as long as it is not too large compared to
+the number of existing points and the record is long
+enough) and use it to fill in the missing values. Therefore the dataset is not altered by inclusion of external
+information.
+A measure of the effectiveness of the method is illustrated by Fig. 8. After year 1991, about 99% of the
+missing values in the original dataset are filled. During
+the years 1989 and 1990 particularly low coverage from
+the satellites results in several points left unfilled since
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+15 JULY 2006
+
+3389
+
+ROMANOU ET AL.
+
+FIG. 8. Percentage of initially missing values that are
+successfully filled. Land-missing points are not counted.
+
+there is no information within the decorrelation scales.
+Such points may be eventually filled using linear time
+interpolation.
+To evaluate the method described here we used three
+different datasets with no missing values: a reanalysis
+dataset (NCEP SST for year 1992), the ISCCP-FD
+downward shortwave radiative flux at the surface for
+1992 (1° resolution, 3 hourly; Zhang et al. 2004), and
+the GPCP precipitation for 1999 (1° resolution, daily;
+Huffman et al. 1997). In all three cases, we simulated
+the distribution of the gaps in GSSTF2 by omitting values at the same times/locations as in GSSTF2. Then we
+then computed the decorrelation scales for each dataset
+and used the decorrelation method to fill in the “missing” values. We then proceeded to compare the “filled”
+product with the initial (no missing values) products.
+The three datasets chosen describe variables/fluxes that
+contain a very wide range of frequencies; therefore the
+decorrelation-based filling method can be evaluated on
+many frequency regimes.
+Figure 9 shows the root-mean-square bias between
+the filled and the original fields, and it is reported only
+for the filled points. The bias between the original
+NCEP SST and the artificially filled one (Fig. 9a) is at
+most 1.2°C in very few areas (Japan Sea) and up to
+0.4°C in some areas, mostly in the Southern Hemisphere. These are areas where the decorrelation scales
+are very small, the conditions are highly variable, and
+hence the interpolation scheme is not as accurate. Seventy percent of all points have biases within 0°–0.2°C.
+The rms bias between the original ISCCP-FD dataset
+and the artificially filled one is shown in Fig. 9b. Seventy percent of all the points have biases up to 10 W
+m⫺2. The greatest bias corresponds to regions again
+
+where the decorrelation scales are short, such as in the
+equatorial regions off Indonesia and in the Bay of Bengal. Figure 9c shows the rms bias in the precipitation
+rates between the original GPCP product and the artificially filled one. Seventy percent of all the points have
+biases up to 1.5 mm day⫺1. Here, the largest biases
+correspond to regions of longest decorrelation scales,
+that is, lower frequency variability.
+The method preserves adequately the gradients of
+the fields as summarized in Table 2. The maximum
+difference in the horizontal gradient is 0.4°C(° lon)⫺1 between the original and the filled SST, 6 W m⫺2(° lon)⫺1
+between the original and the filled radiation flux, and
+0.6 mm day⫺1(° lon)⫺1 between the original and the
+filled precipitation data. Figure 10 shows the spectrum
+in the temporal gradient of the original and the filled,
+globally averaged, time series. The shape of the spectrum is captured well for all three fields. The NCEP
+SST higher frequencies have more power in the filled
+version of the dataset, which implies that the voids
+filled were in regions of higher variability (shorter
+decorrelation scales). The ISCCP-FD and the GPCP
+spectral densities are slightly overestimated in the filled
+versions, which is attributed to the fact that the voids
+were in regions of both higher and lower variability.
+
+5. Summary and conclusions
+In the present paper, we looked at the decorrelation
+scales of the ocean surface turbulence fields, the latent
+and sensible heat fluxes, the wind stress, air–sea humidity difference, and SST from the GSSTF2 and NCEP–
+NCAR reanalysis datasets. The decorrelation scales
+represent the temporal scales and the spatial patterns
+that dominate in the air–sea interaction and are the
+scales at which the lower atmosphere and the ocean are
+forced. The frequency regime examined in this paper
+spans a few days up to a year and the spatial scales span
+1° latitude/longitude up to basin scale. Since the methodology establishes a spectral bandpass between two
+days and either one season or one year, the dominant
+signal is within this pass-band frequency window.
+The dataset we used was the SSM/I retrieved
+GSSTF2 dataset with near-global coverage at daily and
+1° latitude/longitude resolution, which provided the opportunity to construct geographical maps of spatial and
+temporal variability scales. By relating flux variation
+scales with the variability scales of the input physical
+parameters, we were able to suggest the primary
+mechanisms influencing latent heat release and sensible
+heat fluxes regionally.
+Higher frequency variability and smaller spatial patterns dominate in the Southern Hemisphere compared
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+3390
+
+JOURNAL OF CLIMATE
+
+VOLUME 19
+
+FIG. 9. Percentage of points with rms bias within a certain
+range. Only the initially missing values are considered. The horizontal axis is (a) the temperature range (°C) in the filled vs the
+original NCEP SST for year 1992, (b) the radiation range (W
+m⫺2) in the filled vs the original ISCCP-FD downward surface
+radiation flux for year 1992, and (c) the precipitation range (mm
+yr⫺1) in the filled vs the original GPCP precipitation rates for
+year 1992.
+
+to the Northern Hemisphere owing to the unequal
+land–ocean distribution in the two hemispheres.
+In the equatorial regions temporal and spatial variability in latent and sensible heat fluxes comes from the
+trade winds in agreement with Liu et al. (1994). In the
+western Pacific warm pool, variability in the trade
+winds and the humidity differences associated with the
+MJO produces similar variability in both fluxes.
+TABLE 2. Difference between the gradient of the original annual mean field and the filled one. Here, swd stands for surface
+downward shortwave radiation.
+Absolute gradient difference
+
+NCEP SST
+ISCCP-swd
+GPCP
+
+Meridional
+
+Zonal
+
+⬍0.4°C(° lat)⫺1
+⬍4 W m⫺2(° lat)⫺1
+⬍0.2 mm day⫺1(° lat)⫺1
+
+⬍0.2°C(° lon)⫺1
+⬍6 W m⫺2(° lon)⫺1
+⬍0.6 mm day⫺1(° lon)⫺1
+
+In areas where marine stratocumulus clouds are persistent, as in the Congo outflow region and in the eastern equatorial Pacific, the changes of humidity between
+the air and sea are the main mechanism causing evaporation variability. In the equatorial Atlantic, zonal wind
+and SST determine the variability in the sensible heat
+flux.
+In the sensible heat flux signal, longer time scales
+near coasts are associated with persistence of meridional winds and the ensuing coastal upwelling, which
+imprints longer scales on SST as well.
+Along the storm track regions in the northwest Atlantic and northwest Pacific Oceans, intensive cooling
+due to cold air blowing over a warm ocean imposes
+lower frequency variability that is explained by the
+thermal inertia of the ocean. Long scales are then found
+in the latent and sensible heat fluxes there and are attributed to humidity and temperature differences be-
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+15 JULY 2006
+
+ROMANOU ET AL.
+
+3391
+
+FIG. 10. Spectral densities of the temporal gradient of the original (darker line) and the filled (thin line) time series. (a) NCEP
+SST, (b) ISCCP-FD shortwave downward radiation, and (c)
+GPCP datasets. For each plot the temporal gradient of the time
+series of the globally averaged quantity is produced first, and the
+power spectral density of this time series is then computed. The
+units of the vertical axis are (time series units/day)2/(2 days) and
+the vertical axis units are (2 days)⫺1.
+
+tween the sea and the air above rather than variability
+due to winds.
+Low frequency variability of the order of 40–60 days
+near the Amsterdam Islands in the south Indian Ocean
+is associated with analogous variability in the zonal
+winds.
+However, in some regions, such as the Arabian Sea
+and the Bay of Bengal, the low frequency variations in
+both the wind and humidity differences are not consistent with much shorter scale variability in the latent
+heat flux. There, nearly opposite phases of low frequency variability in wind and humidity cancel each
+other, leaving higher frequencies to dominate the latent
+heat flux.
+The spatial variability in the latent and sensible heat
+fluxes is anisotropic, being more consistent in the zonal
+
+than meridional direction, particularly during DJF and
+JJA. The trade winds belt exhibits the largest coherence, while at higher latitudes the coherence is reduced
+owing to the smaller ocean basins. Smaller spatial patterns are found in the storm track regions and in the
+Southern Ocean. Sensible heat spatial patterns have
+larger scales than latent heat, implying that sensible
+heat flux is dominated by the SST patterns. This may be
+exaggerated by the spurious smoothness of the NCEP–
+NCAR product.
+In the Niño-3 region, temporal-scale changes in the
+air–sea humidity difference and the SST are highly correlated with the El Niño and La Niña cycles. Typically,
+during El Niño (La Niña) years, higher (lower) frequency variability dominates in these fields and is of the
+order of 30–40 days (50–80 days). This variability is
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+3392
+
+JOURNAL OF CLIMATE
+
+found at the lower (upper) limit of the MJO frequency
+range. Sensible heat flux, zonal wind, and to a lesser
+degree evaporation scales differ from one El Niño to
+the next.
+In the second part of the paper, we used the decorrelation scales computed for each flux field to interpolate the gaps that resulted from incomplete satellite
+coverage. The information used to fill in the gaps is
+based on the temporal as well as spatial evolution of
+flux features. A similar technique was proposed by
+Polito et al. (2000) to fill in gaps in NASA Scatterometer (NSCAT) winds. However, they restricted their
+method to lags of 3°–4° and 2 days long.
+The advantage of the present method is that only
+internal information from the dataset is utilized to fill in
+missing values and, although it is a simple approach, it
+keeps computational cost related to decorrelation
+evaluations small and, since it is based on the observed
+spatial and temporal patterns, it is easily validated.
+Acknowledgments. The study was carried out under
+NASA Grant 1218935. We wish to thank Dr. Eric Nelkin for providing the GSSTF2 and NCEP datasets;
+Ralph Karow, Cindy Pearl, and Violeta Golea for assistance with the computing facilities; and Dr. George
+Tselioudis for useful discussions.
+
+REFERENCES
+Adler, R. F., and Coauthors, 2003: The Version-2 Global Precipitation Climatology Project (GPCP) monthly precipitation
+analysis (1979–present). J. Hydrometeor., 4, 1147–1167.
+Alexander, M. A., M. S. Timlin, and J. D. Scott, 2001: Winter-towinter recurrence of sea surface temperature, salinity and
+mixed layer depth anomalies. Progress in Oceanography,
+Vol. 49, Pergamon, 41–61.
+Atlas, R., R. N. Hoffman, S. C. Bloom, J. C. Jusem, and J. Ardizzone, 1996: A multiyear global surface wind velocity dataset
+using SSM/I wind observations. Bull. Amer. Meteor. Soc., 77,
+869–882.
+Barnston, A. G., 1996: Time-scales of the variability of the atmosphere. Int. J. Climatol., 16, 499–535.
+Borzelli, G., and R. Ligi, 1999: Autocorrelation scales of the SST
+distribution and water masses stratification in the Channel of
+Sicily. J. Atmos. Oceanic Technol., 16, 776–781.
+Chelton, D. B., and Coauthors, 2001: Observations of coupling
+between surface wind stress and sea surface temperature in
+the eastern tropical Pacific. J. Climate, 14, 1479–1498.
+Chou, S.-H., 1993: A comparison of airborne eddy correlation and
+bulk aerodynamic methods for ocean-air turbulent fluxes
+during cold-air outbreaks. Bound.-Layer Meteor., 64, 75–100.
+——, R. M. Atlas, C.-L. Shie, and J. Ardizzone, 1995: Estimates of
+surface humidity and latent heat fluxes over oceans from
+SSM/I data. Mon. Wea. Rev., 123, 2405–2425.
+——, C.-L. Shie, R. M. Atlas, and J. Ardizzone, 1997: Air-sea
+
+VOLUME 19
+
+fluxes retrieved from special sensor microwave imager data.
+J. Geophys. Res., 102, 12 705–12 726.
+——, E. Nelkin, J. Ardizzone, R. M. Atlas, and C.-L. Shie, 2003:
+Surface turbulent heat and momentum fluxes over global
+oceans based on the Goddard satellite retrievals, version 2
+(GSSTF2). J. Climate, 16, 3256–3273.
+——, ——, ——, and ——, 2004: A comparison of latent heat
+fluxes over global oceans for four flux products. J. Climate,
+17, 3973–3988.
+Chu, P. C., G. H. Wang, and Y. C. Chen, 2002: Japan Sea thermohaline structure and circulation. Part III: Autocorrelation
+functions. J. Phys. Oceanogr., 32, 3596–3615.
+Curry, J. A., and Coauthors, 2004: SEAFLUX. Bull. Amer. Meteor. Soc., 85, 409–424.
+Huffman, G. J., R. F. Adler, A. Chang, R. Ferraro, A. Gruber, A.
+McNab, B. Rudolf, and U. Schneider, 1997: The Global Precipitation Climatology Project (GPCP) combined precipitation data set. Bull. Amer. Meteor. Soc., 78, 5–20.
+Ikeda, M., 1993: Mesoscale variabilities and Gulf-Stream bifurcation in the Newfoundland Basin observed by the GEOSAT
+altimeter data. Atmos.–Ocean, 31, 567–589.
+Kalnay, E., and Coauthors, 1996: The NCEP/NCAR 40-Year Reanalysis Project. Bull. Amer. Meteor. Soc., 77, 437–471.
+Kessler, W. S., M. C. Spillane, M. J. McPhaden, and D. E. Harrison, 1996: Scales of variability in the equatorial Pacific inferred from the tropical atmosphere–ocean buoy array. J.
+Climate, 9, 2999–3024.
+Lagerloef, G., and T. Delcroix, 1999: Sea surface salinity observations for tropical Pacific. CLIVAR Exchanges, Vol. 4, No.
+3, International CLIVAR Project Office, Southampton,
+United Kingdom, 5–10.
+Liu, W. T., A. Zhang, and J. K. B. Bishop, 1994: Evaporation and
+solar irradiances as regulators of sea surface temperatures in
+annual and interannual changes. J. Geophys. Res., 99 (C6),
+12 623–12 637.
+McPhaden, M. J., 1999: Genesis and evolution of the 1997–98 El
+Niño. Science, 283, 950–954.
+Molinari, R. L., and J. F. Festa, 2000: Effect of subjective choices
+on the objective analysis of sea surface temperature data in
+the tropical Atlantic and Pacific ocean. Oceanol. Acta, 23,
+3–14.
+Polito, P. S., and O. T. Sato, 2003: Patterns of sea surface height
+and heat storage associated to intraseasonal Rossby waves
+in the tropics. J. Geophys. Res., 108, 3373, doi:10.1029/
+2002JC001684.
+——, W. T. Liu, and W. Tang, 2000: Correlation-based interpolation of NSCAT wind data. J. Atmos. Oceanic Technol., 17,
+1128–1138.
+Rossow, W. B., and R. A. Schiffer, 1999: Advances in understanding clouds from ISCCP. Bull. Amer. Meteor. Soc., 80, 2261–
+2288.
+Schulz, J., P. Schluessel, and H. Grassl, 1993: Water vapor in the
+atmospheric boundary layer over oceans from SSM/I measurements. Int. J. Remote Sens., 14, 2773–2789.
+Sprintall, J., and G. Meyers, 1991: An optimal XBT sampling
+network for the eastern Pacific Ocean. J. Geophys. Res., 96
+(C6), 10 539–10 552.
+Takayabu, Y. N., T. Iguchi, M. Kachi, A. Shibata, and H. Kanzawa, 1999: Abrupt termination of the 1997–98 El Niño in
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+15 JULY 2006
+
+ROMANOU ET AL.
+
+response to a Madden-Julian Oscillation. Nature, 402, 279–
+282.
+Tanaka, M., 1997: Interannual and interdecadal variations of the
+western North Pacific Monsoon and Baiu rainfall and their
+relationship to the ENSO cycles. J. Meteor. Soc. Japan, 75,
+1109–1123.
+von Storch, H., and F. W. Zwiers, 1999: Statistical Analysis in
+Climate Research. Cambridge University Press, 484 pp.
+
+3393
+
+Wentz, F. J., 1997: A well calibrated ocean algorithm for SSM/I. J.
+Geophys. Res., 102, 8703–8718.
+Zhang, Y., W. B. Rossow, A. A. Lacis, V. Oinas, and M. I. Mishchenko, 2004: Calculation of radiative fluxes from the surface
+to top of atmosphere based on ISCCP and other global data
+sets: Refinements of the radiative transfer model and the
+input data. J. Geophys. Res., 109, D19105, doi:10.1029/
+2003JD004457.
+
+Unauthenticated | Downloaded 04/25/24 05:56 PM UTC
+
+

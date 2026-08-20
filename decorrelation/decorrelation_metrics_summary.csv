@@ -1,0 +1,5 @@
+Mission,Region,Signal,e_folding_Ld_km,zero_crossing_Ld_km,exponential_fit_Ld_km,gaussian_fit_Ld_km,integral_scale_km
+Sentinel-3A Pass 066,Western Bay of Bengal (EICC),Total SLA,221.92420799818314,,224.66151876253113,230.48130967034277,144.268860651053
+Sentinel-3A Pass 066,Western Bay of Bengal (EICC),Deseasonalized SLA,181.54987609159096,,187.92120110273507,185.07053934316195,117.59409342519778
+GFO Pass 008,Andaman Sea / Eastern BoB,Total SLA,,,1108.7876309515673,786.5785941843252,897.2740228083923
+GFO Pass 008,Andaman Sea / Eastern BoB,Deseasonalized SLA,1348.8028310197305,,707.8488742578833,612.9224967315437,722.6751760224141

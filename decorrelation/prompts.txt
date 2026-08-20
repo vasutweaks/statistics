@@ -1,0 +1,12 @@
+Take xtrack along track sla data from
+XTRACK_SOURCE = Path(
+    "/home/srinivasu/xtrackm/data/S3A/ctoh.sla.ref.S3A.nindian.066.nc"
+)
+and perform lead lag correlation. Infer how sla is correlated along track and
+estimate decorrelation length.
+examing xtrack along track data at
+/home/srinivasu/xtrackm/data/GFO/ctoh.sla.ref.GFO.nindian.008.nc
+Read Data and methods section in the following document,
+/home/srinivasu/slnew/coastal_alt_docs/drafts/draft_v02.2a.pdf
+Also see following lib for tools
+/home/srinivasu/xtrackm/lib/tools_xtrackm.py

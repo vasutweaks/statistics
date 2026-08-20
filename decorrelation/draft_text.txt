@@ -1,0 +1,875 @@
+Multidecadal weakening of East India Coastal Current: Evidence from coastal
+altimetry in Northern Indian Ocean.
+
+Srinivasu Upparapalli1, Francis Pavanthara1
+1
+
+ESSO-Indian National Center for Ocean Information Services
+
+Abstract
+The East India Coastal Current (EICC) plays a crucial role in the coastal dynamics
+of the Bay of Bengal, yet its long-term variability remains difficult to quantify due to
+the limitations of traditional satellite altimetry near land. To overcome these
+observational challenges, this study utilizes the high-resolution X-TRACK (L2P
+v2.2) reprocessed along-track Sea Level Anomaly (SLA) dataset for the Northern
+Indian Ocean. The X-TRACK algorithm significantly improves the recovery of valid
+sea level observations in the coastal zone compared to standard products, enabling
+a more accurate assessment of near-shore currents. By analyzing this combined
+multi-mission altimetry record, the study identifies a multidecadal weakening trend
+in the EICC. This long-term weakening is further evaluated in relation to regional
+atmospheric forcing, specifically variations in wind stress magnitude over the Bay of
+Bengal gyre and the equatorial band. Ultimately, the findings provide critical
+observational evidence of long-term changes in boundary current dynamics in the
+Northern Indian Ocean.
+
+1. Introduction
+
+Reliable estimation of coastal currents is of great importance owing to their utility in
+several coastal services. Despite their importance, the in situ observations of
+currents along the coast are sparse and model currents suffer limitations with
+spatial resolution and boundary currents. Approximate geostrophic currents can be
+estimated with traditional altimetry products, but these have several limitations,
+especially on the coast. Most of the altimetry products are masked near coast due
+to reasons like signal contamination by land, inland water reflections which affect
+the shape of the reflected waveform. In addition to this, tides from global tidal
+models are inaccurate near the coast and shelf regions and reference Mean Sea
+Surface(MSS) is not accurate in the coastal regions due to lack of sufficiently long
+data in the coastal regions. Atmospheric effects are not properly accounted for
+while deducing sea level near the coast. The gridding procedure also smooths out
+the variability near the coast.
+Coastal Altimetry algorithms like XTRACK (Roblou, 2007) aims to address several
+of the above challenges with various techniques. State of the art high resolution
+regional models are used to better filter out tides and meteorologically induced
+signals. Employing new waveform models for retracking of coastal waveforms
+(ALES, i.e., Advanced Leading Edge Subwaveform retracker) (Passaro, 2014)
+reduces the number of points rejected near the coast. Sophisticated vertical
+reference frame with updated MSS and Screening multiple along track altimetry
+data together are other techniques. Using these methods, many of the near coast
+points can be retained which would otherwise be edited out.
+Before the advent of coastal altimetry, coastal currents and sea level were studied
+using regular satellite altimetry. Strub, 1997 for example, have examined the
+dynamics of the California Current System using TOPEX altimetry derived surface
+currents demonstrating the potential for studying large-scale circulations. One
+major application of coastal altimetry is to study sea level variability very close to
+the coast. One of the earliest studies using specialized coastal altimeter processing
+(Vignudelli et al., 2005) have studied sea level variability in Corsica Channel. They
+observed that open ocean tide gauge site Capraia has shown lesser sea level
+RMSE in comparison to near coast tide gauge site Livorno. This could be due to
+generally noisier radar reflections near the coast than in the open ocean.
+Specifically in North Indian Ocean context, Durand, 2009 used newly re-processed
+altimetry(MAP group) data of Topex/poseidon (T/P) to study the spatiotemporal
+variations of the East India Coastal Current (EICC). They were able to look into the
+cross shore structure of the EICC and showed the boundary trapped nature of
+EICC extending up to 150-200km. Dohan and Maximenko (2010) highlight the
+
+importance of satellite altimetry and ocean vector winds for monitoring geostrophic
+and Ekman currents, providing insights into surface current dynamics at various
+scales.
+Reprocessed coastal sea level data has been used to study several regional
+coastal circulations (Le Hénaff, 2011; Liu, 2012). While assessing the performance
+of XTRACK altimetry derived currents in the West Florida Shelf (Liu et al., 2012)
+have found that Ekman corrected geostrophic currents improve RMSE when
+compared with ADCP and HF radar observations.
+Jebri, 2016 have shown that close to the coast in Mediterranean Sea, higher
+variability (in terms of standard deviation) is observed in XTRACK SLA compared to
+AVISO along-track SLA. They have also shown that XTRACK derived cross-track
+geostrophic currents are in better agreement with nearby ADCP than with AVISO
+derived currents. The analysis over South Atlantic Bight (Yuan, 2017) highlights the
+significant contribution of wind-driven Ekman dynamics to along-shelf transport,
+especially during seasons when wind is strong.
+Since the above studies, several new developments have happened in coastal
+altimetry. X-TRACK v.2.7.12 version has updated Mean Dynamic Topography
+estimated from a combination of altimetry, gravimetry (GRACE and GOCE) and insitu data, updated tides based on FES2014b model. A full description of the
+XTRACK algorithm can be found in (Birol et al., 2017). Very recently, Cazenave et
+al., 2022 demonstrated that reprocessed satellite altimetry data can be used to
+accurately capture coastal sea level trends within 20km of the shoreline. Their
+analysis indicates that coastal altimetry data can be used as virtual tide gauge
+stations to monitor coastal sea level rise across the globe including North Indian
+Ocean.
+However, earlier coastal altimetry studies in the region, such as Durand et al.
+(2009), largely considered Ekman components to be negligible, focusing primarily
+on the geostrophic flow. To accurately capture the total surface current variability,
+especially in a monsoon-dominated regime like the Bay of Bengal where wind
+forcing is highly seasonal and intense, the integration of Ekman velocities with
+geostrophic currents is essential (Sudre et al., 2013).
+Furthermore, while the intraseasonal and seasonal variability of the East India
+Coastal Current (EICC) has been extensively documented through hydrographic
+surveys, short-term mooring deployments (Mukherjee et al., 2014; Amol et al.,
+2014), and numerical modeling (McCreary et al., 1996; Shankar et al., 1996), its
+multidecadal evolution remains poorly understood.
+Standard gridded altimetry products systematically fail to resolve this narrow,
+boundary-trapped flow over the continental slope. This observational gap is
+particularly concerning given the rapid and asymmetric warming of the Indian
+
+Ocean, which has been shown to dampen overall monsoonal wind circulation and
+alter large-scale atmospheric patterns (Roxy et al., 2015; Schott et al., 2009).
+Consequently, there is a critical need to assess how boundary currents like the
+EICC are responding to sustained atmospheric and thermodynamic shifts over the
+basin.
+To bridge this gap, this study leverages a reprocessed, multi-mission coastal
+altimetry dataset (X-TRACK) spanning over three decades, explicitly combined with
+Ekman transport estimates, to provide a comprehensive analysis of the EICC right
+up to the continental slope. By applying specialized coastal processing algorithms,
+the X-TRACK dataset recovers significantly more valid sea level anomaly (SLA)
+observations near the coast compared to standard Level-2 products (Figure 1),
+enabling the continuous observation of near-shore dynamics. With some missions
+(see Sup Fig 1) of XTRACK product spanning more than three decades at 10 days
+resolution, the dataset offers an unprecedented opportunity to study long term
+changes in the coastal sea level and currents in the Indian Ocean.
+Our objective is twofold: first, to evaluate the performance of the XTRACK coastal
+altimeter product in the Northern Indian Ocean, by comparing XTRACK-derived
+geostrophic current components with data from HF radar, RAMA, OMNI buoys and
+drifter buoys. Special emphasis is given to estimate the effect of Ekman correction
+on the total velocity estimation in the nearshore regions and second, to investigate
+a sustained multidecadal weakening of the EICC. We explore the dynamic links
+between this weakening boundary current and the basin-wide relaxation of its
+primary drivers namely, local alongshore winds and remote equatorial wind stress,
+which modulate the propagation of coastal Kelvin waves.
+The remainder of the paper is organized as follows: Section 2 details the multimission satellite altimetry data, wind products, and the methodology used to
+compute the total surface currents. Section 3 presents the validation of the
+altimetry-derived currents against in situ observations. Section 4 examines the
+multidecadal variability of the EICC and characterizes the dynamic response to
+shifting regional wind forcing.
+2. Data and Methods
+The along-track Sea Level Anomaly (SLA) data processed with XTRACK (L2P
+v2.2) are grouped by regions and satellite missions that have similar orbital paths.
+For the current study, data for the northern Indian region (labeled as NINDIAN
+which covers 42E:99E, 0:25N) was downloaded from the ftp site ftpaccess.aviso.altimetry.fr distributed by Center de Topographie des Océans et de
+l′Hydrosphére (CTOH). Supplemental Figure 1a shows the multi-mission reference
+tracks, their temporal and spatial resolution, total number of tracks (and their
+intersection points over the basin) available for the region NINDIAN. The horizontal
+
+extent of the bars indicates the temporal coverage of the satellite missions. The
+temporal resolution ranges from 10 days for TOPEX/Poseidon (T/P) and Jason
+satellites to about one month for Sentinel-3A, ERS, Envisat and Saral combination.
+The along-track data has a spatial resolution of 6-7km corresponding to 1Hz
+sampling. The multi-mission references tracks also have varying levels of data
+availability (Sup Figure 1b). Missions S3A, TP+J1+J2+J3+S6A and S3B have the
+best
+overall
+data
+availability
+followed
+by
+HY2A,
+GFO
+and
+ERS1+ERS2+ENV+SRL.The multi-mission reference track TPN+J1N+J2N+J3N
+has both poor data availability and least number of intersection points covering the
+region.
+To evaluate the computed geostrophic currents in the open ocean surface current
+data of RAMA buoys available at https://www.pmel.noaa.gov/tao/drupal/disdel/ and
+OMNI buoy current data has been used. To compute region averaged
+winstress(and curl) and Ekman velocity component, Cross Calibrated Multi-Platform
+(CCMP) v3.1 wind data available on 0.25o spatial grid has been used. This dataset
+is available at www.remss.com with DOI of https://doi.org/10.56236/RSS-uv6h30.
+Near shore currents are validated with the HF radar data from three locations Tamil
+Nadu (TN), Andhra Pradesh (AP) and Odisha (OR) on the east coast of India.
+These radar stations are operated and maintained by NIOT as part of Indian
+Coastal Ocean Radar Network (ICORN). Drifter buoy data from the Global Drifter
+Program (GDP) of the NOAA Atlantic Oceanographic and Meteorological
+Laboratory (AOML) has been used to further verify the robustness of computed
+geostrophic currents especially in the coastal regions. The data can be found at
+https://www.aoml.noaa.gov/ftp/pub/phod/buoydata/6h/. The dataset which maps the
+distance to the nearest coast is used to estimate proximity of observations to the
+coast. This dataset is available as part of Generic Mapping Tools (GMT) which is
+available at https://oceancolor.gsfc.nasa.gov/resources/docs/distfromcoast/.
+To evaluate the performance and added value of the X-TRACK coastal altimetry
+product, standard along-track Level-2+ (L2P) Sea Level Anomaly (SLA) data
+distributed by AVISO+/CNES were utilized as a baseline for comparison. The L2P
+dataset provides global, 1-Hz along-track SLA time series derived from standard
+Level-2 instrumental measurements. In this standard product, SLAs are computed
+using state-of-the-art environmental and geophysical corrections (including wet/dry
+tropospheric, ionospheric, tidal, and dynamic atmospheric corrections) optimized
+primarily for the open ocean.
+While highly accurate in the open ocean, standard L2P processing applies rigorous
+data-editing criteria that frequently flag and discard measurements near the coast.
+In this study, the standard deviation of SLA from the conventional L2P product was
+compared with that of the X-TRACK product as a function of distance from the
+coast. Because the X-TRACK processing chain uses the L2P dataset as its primary
+
+input but applies specialized, coastal-oriented spatial filtering and editing strategies,
+comparing the two directly isolates the ability of the X-TRACK algorithm to recover
+valid, high-resolution physical variability in the near-shore region that would
+otherwise be lost or smoothed out in the standard L2P product.
+In the XTRACK data product, the satellite ground tracks data were arranged with
+their first index falling on equator and last index falling on the coast. Variables such
+as SLA and Dynamic Atmospheric Correction (DAC), among others, are functions
+of points_numbers (spatial sampling points) and cycles_numbers(temporal). To
+better manipulate and visualize the data, the variables are reshaped as a function
+of distance (s) from the coast and time. The distance (s) is the along-track distance
+between coastal point and track points on an ellipsoidal model of earth computed
+based on geodesic algorithms(Karney, 2013). Raw data can give large gradients
+upon differentiation along track and then give unrealistic currents. Proper
+smoothing is needed to derive reliable currents.
+An exercise has been done to compare the performances of various filters, namely,
+Gaussian with sigma levels of 3 and 6, box smoothing with window lengths of 6 and
+12, optimal difference operator(Powell and Leben, 2004) and loess filtering in
+properly estimating the geostrophic current components at the track intersection
+points. Among the tested smoothing techniques, the along-track smooth by loess
+filter (Cleveland 1979) with 0.05 fraction of regional points for the regression is
+found to be best for estimating geostrophic currents. This filter gives an RMSE of
+0.133m/s and correlation of 0.66 for computed geostrophic zonal currents against
+AVISO msla currents(extracted at intersection points) along the time axis. Optimal
+difference operator is second best with correlation, RMSE pair of 0.65 and 0.135.
+These are followed by other techniques. Hence, each track is smoothed using a
+loess filter with a fraction of 0.05 of data selected at each point for local regression.
+Meridional currents are poorly resolved with correlations <0.4 even with best
+smoothing filters. This is because all tracks make small acute angles with the north
+meridian at the intersection points. Hence most of the analysis is limited to well
+resolved zonal component of the current. Since geostrophic currents are undefined
+at equator, tracks within the band 5S-5N are trimmed. Differentiation along the track
+gives geostrophic current that is normal to the path of the track. The cross-track
+geostrophic current(gc) is calculated as follows,
+gc=
+
+−g ∂h
+f ∂s
+
+where s is the distance from coast which serves as along track dimension, h is the
+sea level anomaly, g is the acceleration due to gravity and f is the Coriolis
+parameter. For more precision, g is computed as a function of latitude.
+
+To be able to resolve zonal and meridional components of the current vector, we
+need two cross-track geostrophic currents. This is only possible at the intersection
+points of ascending and descending tracks. Cross-track geostrophic currents (gc1
+and gc2) for each track at the intersection points are computed. These are
+expressed as the linear combination of components of the current vector (Parke et
+al., 1987).
+gc 1=− usin ( α 1 ) +vcos ( α 1 )
+gc 2=− usin ( α 2 ) +vcos ( α 2 )
+
+Here α1 and α2 are the heading angles (counter clockwise to the positive x-axis) of
+the intersecting tracks. We can deduce current vector components as follows.
+gc 1 cos α 2 − gc 2 cos α 1
+sin ( α 2 − α 1 )
+gc sin α 1 − gc 1 sin α 2
+v= 2
+sin ( α 2 − α 1 )
+
+u=
+
+To estimate the wind-driven Ekman current components, daily 10-meter wind
+velocity fields (u10 , v 10) were obtained from the Cross-Calibrated Multi-Platform
+(CCMP) version 3.1 dataset. The surface wind stress vector ( τ x , τ y ) was first
+calculated using the bulk aerodynamic parametrization:
+τ x = ρ a i r C d W u10
+τ y = ρ a i r C d W v 10
+2
+2
++v 10
+where W is the wind speed magnitude ( √ u10
+), ρ a i r =1.225 kg m
+
+−3
+
+is the density of
+
+−3
+
+air, and C d =1.5 × 10 is the dimensionless drag coefficient. The kinematic wind
+stress components (~τ x , ~τ y ) were subsequently obtained by dividing the wind stress
+−3
+by the reference density of seawater ( ρ w a t e r =1025.0 kg m ). Following classical
+Ekman theory (Vallis, 2006), the depth-dependent Ekman velocity components (
+u E ( z ) , v E ( z )) were computed using the analytical solutions for a wind-driven surface
+boundary layer in a homogeneous ocean of infinite depth. The equations governing
+the horizontal Ekman spiral are given by:
+
+[ ( )
+[ ( )
+
+( d 4 ))
+
+u E ( z )=
+
+√ 2 e z / d ~τ cos z − π − ~τ sin z − π
+
+v E ( z )=
+
+√ 2 e z / d ~τ sin z − π + ~τ cos z − π
+
+fd
+
+fd
+
+x
+
+x
+
+d
+
+d
+
+4
+
+4
+
+y
+
+y
+
+( d 4 ))
+
+where z is the depth (defined as negative downwards, with z=0 at the surface),
+f =2 Ω sin ( θ ) is the Coriolis parameter at latitude θ , and d is the Ekman layer depth.
+The Ekman depth is defined as:
+
+d=
+
+√
+
+2A
+|f )
+
+where A represents the vertical eddy viscosity parameter, which was set to a
+constant value of 0.1 m 2 s−1. Because the Coriolis parameter approaches zero at the
+equator, causing singularities in the Ekman depth and velocity calculations, the
+computations were masked out for the equatorial band between 5°S and 5°N.
+The momentum transferred from the wind to the ocean surface is highly sensitive to
+wind speed due to varying surface roughness. Following the piecewise formulation
+utilized by Wang et al. (2023), which builds upon the foundational bulk
+parameterizations of Large and Pond (1981), the dimensionless drag coefficient ( C d
+) was parameterized as a function of the 10-meter wind speed magnitude (W ):
+
+{
+
+( 0.62+1.56 /W ) × 10− 3 if W <3.0 m s−1
+−3
+−1
+Cd=
+1.14 × 10
+if 3.0 ≤ W ≤ 10.0 m s
+( 0.49+0.065 W ) × 10− 3 if W >10.0 m s−1
+
+)
+
+Similarly, the assumption of a constant vertical eddy viscosity ( A=0.1 m 2 s−1) limits
+the model’s ability to accurately capture the depth of the Ekman layer, which
+deepens under stronger wind forcing due to enhanced turbulent mixing. To address
+this, a dynamic, wind-dependent eddy viscosity was implemented. Adapting the
+relationships established by Santiago-Mandujano and Firing (1990) and
+subsequently validated in the context of global ocean surface current products
+(OSCAR) by Johnson et al. (2007), A is defined dynamically as:
+A=
+
+{
+
+a
+if W <1.0 m s−1
+a W b if W ≥ 1.0 m s−1
+
+)
+
+where the empirical constants are set to a=8 × 10−5 and b=2.2.The incorporation of
+these dynamic variables allows the Ekman layer depth ( d= √ 2 A /|f )) to adjust
+realistically to local atmospheric conditions.
+RAMA, OMNI and radar daily currents are smoothed with a 72 hour low pass
+butterworth filter (4th order) to retain only sub-inertial currents. The 6 hourly drifter
+buoy data is averaged to daily and smoothed over a 3 day running window.
+Intersection points of tracks don’t usually fall on the points of observation to
+compare with. So, for each point observation we want to compare with, nearby
+intersection points are searched. Only those combinations of tracks and
+observations with less than a minimum threshold (0.5o) of distance are selected for
+comparison.
+3. Results
+The efficacy of the coastal-dedicated X-TRACK processing algorithm against
+standard AVISO Level-2+ (L2P) products is demonstrated in Fig 1. Figure 1a
+
+illustrates the spatial distribution of 12 selected Sentinel-3A (S3A) satellite ground
+tracks over the Bay of Bengal. Historically, standard satellite altimetry has exhibited
+significant limitations in the coastal zone typically within 50 km of the shoreline.
+These limitations primarily stem from the contamination of the radar footprint by
+landmasses, inaccurate coastal tidal models, and degraded wet tropospheric
+corrections, which collectively corrupt the returning waveform and subsequent SLA
+estimates (Bouffard et al., 2010; Benveniste et al., 2020).
+Standard processing protocols often result in a severe loss of data near the coast
+due to strict editing criteria that flag land-contaminated observations as invalid.
+Figure 1b shows the percentage of valid SLA observations recovered by both
+products. While the availability of standard L2P data drops precipitously as the
+satellite ground track approaches the coast, X-TRACK recovers a substantially
+higher percentage of valid points right up to the shoreline. By recovering these
+near-shore observations without amplifying the noise, X-TRACK effectively bridges
+the observational gap between the open ocean and the coastal domain. This
+recovery is critical for resolving narrow, coastal-trapped boundary currents such as
+the East India Coastal Current (EICC), which often occupy the heavily masked 0–
+50 km coastal band (Durand et al., 2009). Figure 1c illustrates the temporal
+standard deviation (STD) of the SLA as a function of distance from the coast. In the
+standard L2P product, the SLA variance increases sharply near the coastline. It can
+be seen that the XTRACK-processed data retains higher SLA variability near the
+coast (within the first 50 km) compared to the standard L2P product. Beyond
+approximately 150 km offshore, the standard deviations of both products converge.
+This improvement aligns with previous regional studies (e.g., Roblou et al., 2010;
+Jebri et al., 2016), which demonstrated that applying tailored along-track editing
+criteria and improved high-resolution geophysical corrections substantially reduces
+non-physical variance in coastal sea level time series.
+3.1 Open ocean validations with RAMA/OMNI
+Following the computation of the geostrophic and Ekman velocity components at
+the intersection points, it is crucial to validate the combined surface current
+estimates against independent in situ observations to test robustness of
+geostrophic current computation and other processing methods involved. For this
+purpose, we first utilized open-ocean near-surface current measurements from the
+OMNI(and RAMA) buoy network in the Bay of Bengal(BoB) and Arabian Sea(AS).
+Because of the temporal gaps in OMNI data and altimetry data, having a complete
+timeseries of overlapping periods is hard to find. Figure 2a illustrates one such
+spatial configuration used for the comparison. The black marker denotes the
+intersection point of two Sentinel-3A (S3A) satellite tracks (tracks 522 and 279),
+while the red marker indicates the location of the nearby OMNI buoy (BD10).
+Although the buoy is situated approximately half a degree away from the exact
+
+track intersection, this separation is well within the typical mesoscale decorrelation
+scales of the region, making it a highly suitable proxy for validating the altimetryderived currents. The OMNI daily zonal data is selected at the timestamps of S3A
+mission which has a temporal resolution of 27 days (Supplemental Fig 1a). Figure
+2b presents the corresponding time series of the zonal current component (gu), its
+Ekman correction and its validation against the buoy data. The in situ zonal current
+measured by the OMNI buoy (red line) serves as the reference. When comparing
+the purely geostrophic zonal current derived from the along-track altimetry (black
+line) to the buoy data, the altimetry captures the lower-frequency seasonal
+reversals. To account for the direct wind-driven circulation, the Ekman component
+was added to the geostrophic flow. As shown by the blue line (geostrophic +
+Ekman), the inclusion of the Ekman component noticeably improves the agreement
+with the OMNI buoy observations. The Ekman-corrected timeseries better captures
+the peak magnitudes (Jul-2019, Aug-2021, Aug-2022) and the higher-frequency
+variability of the true surface flow. This aligns with the fundamental oceanographic
+consensus that near-surface buoy measurements represent the total flow
+(geostrophic plus ageostrophic Ekman currents). Similar improvements in
+correlation and Root Mean Square Error (RMSE) upon adding the Ekman
+component have been extensively documented in previous coastal altimetry
+studies. For instance, Liu et al. (2012) and Saraceno et al. (2008) demonstrated
+that Ekman-corrected geostrophic currents yield significantly better statistical
+agreements with moored ADCPs and HF radar observations over continental
+shelves. Furthermore, global-scale studies by Sudre et al. (2013) and Rio et al.
+(2014) highlight that capturing the synergistic effect of both components is strictly
+necessary to accurately retrieve surface layer kinematics. Finally, the time series
+also includes the zonal current derived from the standard AVISO gridded mapped
+sea level anomalies (MSLA) at the same intersection point (cyan line). This
+timeseries closely follows that of track derived geostrophic velocity as is expected
+in the open ocean. Compared to the along-track altimetry estimates, the AVISO
+currents exhibit a heavily smoothed temporal profile, failing to capture the sharp,
+mesoscale peaks recorded by the buoy. This dampening effect is a well-known
+artifact of the spatial and temporal interpolation schemes used to create gridded
+altimetry products, which tend to smooth out energetic, small-scale coastal and
+shelf dynamics (Jebri et al., 2016; Bouffard et al., 2010). Consequently, the alongtrack formulation combined with the local Ekman correction provides a much more
+faithful representation of the true surface circulation in this region. At this
+intersection point, raw track derived geostrophic current gives a correlation of 0.66
+against the OMNI, while Ekman corrected timeseries gives a correlation of 0.72.
+Building upon the single-point time-series analysis, a comprehensive statistical
+validation was conducted across the broader Bay of Bengal and Arabian Sea
+regions in Indian Ocean to robustly quantify the performance of the altimetry-
+
+derived currents. For this basin-scale assessment, co-located measurements from
+the extensive network of RAMA (Research Moored Array for African-AsianAustralian Monsoon Analysis and Prediction) and OMNI buoys were utilized. As
+discussed in the data and methods section, zonal and meridional current
+components can only be resolved at the intersection of reference tracks. Each
+observation point is surrounded by at least 4 close intersection points (forming the
+vertices of a diamond shape). The observational timeseries is matched with the
+geostrophic timeseries of several nearby intersection points after masking the
+invalid values. This facilitates the estimation of robust comparison metrics between
+altimetry derived currents and observational currents. Intersection points that are
+farther than 50km from the observational point are omitted while computing the
+metrics.
+Figure 3 presents density scatter plots comparing the altimetry-derived zonal
+surface currents against the in situ buoy measurements. To evaluate the specific
+contribution of wind-driven dynamics, the comparisons are separated into purely
+geostrophic currents and total currents (geostrophic plus Ekman). Panels (a) and
+(c) illustrate the comparison using only the purely geostrophic zonal component ( u g)
+derived from the satellite tracks against the RAMA and OMNI buoys, respectively.
+While the highest density of points clusters along the theoretical perfect fit (white
+dashed line), the linear regression (red line) reveals an underestimation of the
+current magnitudes, and the scatter exhibits considerable spread. Panels (b) and
+(d) display the same comparisons after the zonal veloctity estimates have been
+corrected by adding the locally derived zonal Ekman velocity component ( u g +u E).
+The inclusion of the ageostrophic Ekman flow yields a clear statistical improvement
+across both buoy networks:
+RAMA Buoys: The number of points available for comparison is quite low (only 205)
+since all of the equatorial RAMA buoys are omitted (because geostrophy breaks
+here) with only five buoys remaining for comparison. The wider scatter reflects the
+inherent challenges of coastal altimetry and the presence of significant
+ageostrophic processes. The addition of the Ekman component however shifts the
+linear fit noticeably closer to the 1:1 reference line. The overall correlation (R)
+improves significantly (from 0.48 to 0.66), and the scatter tightens, reflecting the
+strong wind-driven dynamics in this region. The standard error has also reduced.
+Further differences can be accounted for the fact that RAMA bouys’ velocities are
+at 10m and track derived current are surface and almost all the intersection points
+considered don’t fall exactly on the RAMA locations.
+OMNI Buoys: OMNI buoy network is situated in the interior of the Bay of Bengal
+and Arabian Sea. Because OMNI buoys are clustered north of 5N, there are so
+many spatial and temporal matches with altimetry timeseries. This provided the
+bulk of points (1148) for the comparison. The high density of points near the origin
+
+indicates that the background state is well-captured, while the tighter clustering
+along the regression line confirms the high fidelity of the altimeter in these regions.
+A similar significant improvement is observed for the OMNI network with the
+addition of Ekman components. The correlation increases (from 0.51 to 0.58), and
+the standard error is reduced. Across both buoy networks, the integration of the
+wind-driven Ekman component consistently enhances the accuracy of the satellitederived surface currents. While Ekman correction failed to reduce RMSE
+significantly, an additional 7% variance is explained by addition of Ekman drifts.
+These statistical improvements align directly with classical physical oceanography
+principles; near-surface in situ instruments (such as buoys drogued at 10–15 m
+depth) inherently measure the total kinematic flow, comprising both the pressuregradient-driven geostrophic currents and the direct wind-driven Ekman drift. On a
+global scale, studies by Sudre et al. (2013) and Rio et al. (2014) demonstrated that
+synergistic surface current products combining altimetry with an empirical Ekman
+model consistently outperform purely geostrophic estimates when validated against
+Lagrangian drifters and moored Acoustic Doppler Current Profilers (ADCPs). In the
+context of tropical and equatorial dynamics, Lagerloef et al. (1999) showed that
+incorporating the Ekman component is strictly necessary to resolve the total
+velocity variance observed by buoys. Furthermore, regional coastal altimetry
+assessments, such as those by Liu et al. (2012) on the West Florida Shelf, have
+consistently reported measurable reductions in Root Mean Square Error (RMSE)
+and improved correlation coefficients once the wind-driven Ekman velocities are
+superimposed onto the along-track geostrophic anomalies.
+3.2a Near shore validations with Lagrangian drifters
+While there are plenty of observations in the open ocean, there is a dearth of
+velocity observations very close to the coast in the Indian Ocean to make valid
+comparisons. The velocity data from the ADCP moorings available on the shelf and
+slope of the east and west coast of India are not valid above 48m (Amol et al 2012,
+2014, Mukherjee et al 2014). To further extend validation into the dynamic nearshore domain, we resorted to Lagrangian surface drifters. Drifters provide an
+excellent source of continuous, high-resolution independent velocity
+measurements, particularly in regions where moored arrays are sparse. For this
+assessment, we utilized quality-controlled drifter trajectories that intersected the
+satellite tracks within a 100 km coastal band. Hundreds of drifter buoys pass close
+to the Indian coast whose time periods might overlap with the time period of the
+satellite missions. The spatial and temporal collocation process is done in three
+steps. First drifter tracks that don’t have any overlapping time period with that of the
+satellite mission are omitted. Then at each intersection point, a small square box of
+one degree width is formed and it is checked, at each drifter track if any part of it
+passes through the box. If so, it is added to the candidate list for further processing.
+
+The index of the closest point of the drifter track to the intersection point is
+computed by least square distance. This index is then used to retrieve the time
+stamp and zonal velocity of the drifter track. gu timeseries is interpolated at the time
+stamp to get the collocated track zonal velocity. We have chosen the multi-mission
+reference orbit TPN+J1N+J2N+J3N for this exercise since it has very temporal
+coverage and 10day temporal resolution, so tolerance of interpolation won’t be
+greater than five days. To focus specifically on the coastal regime, of all the
+collocated points, only the points that are within 100km distance from the coast are
+considered for evaluation.
+Figure 4 illustrates the density scatter plots comparing the zonal velocity
+components from the drifter observations against the collocated altimetry-derived
+estimates for the multi-mission reference orbit (TP+J1+J2+J3+S6A). a) shows the
+scatter plot comparing the in situ drifter zonal velocities (y-axis) against the purely
+geostrophic zonal currents derived from the along-track sea level anomalies (xaxis). The color bar indicates the point density, revealing that while the highest
+concentration of measurements clusters along the 1:1 perfect fit reference (white
+dashed line), there is considerable spread. The linear regression fit (red line)
+indicates a general underestimation of the current magnitudes by the purely
+geostrophic altimetry, yielding a baseline correlation and standard error typical of
+uncorrected satellite estimates in high-variability coastal regions. b) displays the
+same comparison after the altimetry-derived geostrophic velocities have been
+corrected by superimposing the locally derived Ekman zonal velocities u g +u E . The
+inclusion of the direct wind-driven component yields a clear statistical improvement.
+The dense cluster of scatter points aligns much more closely with the 1:1 reference
+line, the overall correlation increases (from 0.66 to 0.72) and the standard error is
+visibly reduced (as detailed in the upper left-hand statistics boxes). There is also a
+modest reduction of RMSE from 0.36m/s(before Ekman correction) to 0.34m/s after
+correction. Geostrophic current alone explains 48% (R2 in percentage) and
+Geostrophic current+Ekman component together explains 56% of total drifter
+velocity variance. This indicates an additional 8% variance is explained by Ekman
+component alone in the coastal regions(<100km). It can be noticed that this
+correlation is better than that of the open ocean. This can be due to the richer
+spatial temporal availability of drifter data, whereas in open ocean observations are
+few and fixed. These correlations are similar in magnitude to the geostrophic drifter
+velocities(after removing the Ekman component) versus altimetry velocities (Niiler
+et al. 2003). Consistent with the moored buoy validations, the drifter comparisons
+confirm that near-shore altimetry products successfully capture the large-scale
+coastal velocity variance.
+In the context of boundary currents and coastal regimes, studies by Bouffard et al.
+(2010) and Liu et al. (2012) have highlighted that coastal altimetry (such as X-
+
+TRACK) can accurately resolve near-shore geostrophic flow, but optimal
+agreement with in situ data (whether from ADCPs, HF radars, or drifters) is only
+achieved when the wind-driven Ekman velocities are appropriately quantified and
+added to the signal. Furthermore, Lagerloef et al. (1999) noted that in tropical
+regimes, incorporating Ekman components is critical for capturing the full variance
+of drifter velocities. Our results along the Indian coast perfectly mirror these
+conclusions, demonstrating that the synergistic combination of high-resolution
+coastal altimetry and Ekman dynamics provides a robust representation of the
+near-shore circulation.
+
+3.2b Near shore validations with radar
+Following the Lagrangian validation using surface drifters, we extend our analysis
+to an Eulerian framework to evaluate the cross-shelf structure of the East India
+Coastal Current (EICC). While drifters provide excellent ground truth for tracking
+water parcels, High-Frequency (HF) radar networks offer a unique advantage by
+resolving the continuous spatiotemporal evolution of surface currents near the
+coast. The three radar regions situated in the region have varying temporal
+variability. Among the three radar regions studied, TN shows better data availability
+for much of the region. AP radar region shows lowest data availability with less than
+50 percent temporal coverage for the whole region. Peripheral regions away from
+the radar transmitter and receiver locations witness poor data availability for all
+three regions.
+Ekman corrected along-track geostrophic cross-track currents are compared with
+rotated (in the cross track direction) radar fields extracted along the traversing
+tracks. Fig 5a shows one such example of traversing track (track number 165 of
+S3A mission) through OR radar region. Because this descending satellite track is
+oriented approximately orthogonal to the coastline, the cross-track velocity
+component serves as an excellent proxy for the along-shelf flow of the EICC.
+The time–distance Hovmöller diagrams present the evolution of the along-shelf
+currents as captured by both the corrected altimetry (Figure 5b) and the HF radar
+(Figure 5c). b) and c) time versus distance plots of Ekman corrected cross track
+geostrophic current and radar field extracted along this track. A quantitative
+assessment of this agreement is detailed in Figure 5d, which illustrates the skill
+metrics (correlation and Root Mean Square Error, RMSE) as a function of offshore
+distance (x). The visual agreement between the u g +u E structure and the radarderived velocities is striking. Both datasets successfully capture the pronounced
+seasonal reversals characteristic of the EICC, transitioning from strong poleward
+flow in the spring to equatorward flow during the winter monsoon. This robust
+
+seasonality aligns with the acoustic Doppler current profiler (ADCP) observations of
+the EICC documented by Mukherjee et al. (2014) and the broader boundary current
+structure modeled by Durand et al. (2009).
+
+Ekman correction has improved noticeably both the correlation and RMSE all
+across the region. But the overall reduction in RMSE across all transects and all
+radar regions is negligible (stayed at 0.3m/s). Improvement in correlation is also
+modest (0.55 mean correlation changed to 0.60). Mean correlations across all
+traversing tracks is better for regions AP and OR than with TN although TN has
+better temporal data coverage for most of its region. In radar regions, Ekman
+correction can only explain an additional variance of 4%. This modest improvement
+in correlation close to the coast was also noticed in drifter comparisons. However
+radar metrics are for rotated (in the direction of gc) currents, not for zonal currents,
+so these are not directly comparable.
+4. EICC strength along the coast
+The East India Coastal Current (EICC) is a western boundary current of the Bay of
+Bengal. Its features include seasonal reversals driven by monsoon winds and
+complex spatiotemporal variability (Durand et al., 2009, Shankar 1994, 1996). Flow
+is dominated by seasonal cycle while intra-seasonal and inter annual variations are
+highly discontinuous. It flows northward during March to May and reverses
+southward from September to November. The boundary current is confined within
+200km of the east coast of India.
+Building upon the robust validation of the Ekman-corrected coastal altimetry
+currents against independent near-shore radar and drifter observations, we
+leverage this enhanced dataset to investigate long-term coastal circulation
+dynamics. Coastal boundary regions historically suffer from a severe scarcity of
+sustained, multi-decadal in situ current measurements, limiting our understanding
+of long-term climatic shifts. To address this, we utilize the extensive temporal (from
+1992 to 2016) and spatial coverage (788 intersection points, see Sup Fig 1) of the
+multi-mission reference orbit (comprising ERS-1/2, Envisat, and SARAL/AltiKa) to
+assess the multidecadal variability of the East India Coastal Current (EICC). Figure
+6 illustrates the spatial framework and the resulting long-term timeseries analysis of
+the EICC's strength. As shown in the left panel, we selected seven altimetry
+crossover points (labeled A through G, spanning from south to north between 10 oN
+and 22oN) strategically located over the continental slope along the eastern
+boundary of the Bay of Bengal, primarily bracketed by the 200 m and 1000 m
+isobaths. Although there are several points on the shelf region very close to the
+coast, we made sure not to include them since seasonally reversing EICC is absent
+on the shelf region (Biswmoy 2021). At each of these intersection points, the total
+surface current speed was computed from the combined geostrophic and Ekman
+
+velocity components. To isolate the long-term multidecadal signal from the highly
+energetic seasonal monsoonal reversals and interannual perturbations (such as El
+Niño–Southern Oscillation and Indian Ocean Dipole events), a 500-day low-pass
+Butterworth filter was applied to the current speed time series. The right panel of
+Figure 6 presents these low-pass filtered time series alongside their linear trend fits
+(black dashed lines). The data reveal a pronounced and statistically significant
+multidecadal weakening of the EICC's strength over the nearly three-decade
+observation period. The linear trends are predominantly negative across the basin's
+boundary. Points E, F show the smallest weakening trend while A, B, D points show
+the strongest trend. As annotated on the spatial map, the reductions in current
+speed are substantial, reaching up to -0.0223 m s -1 yr-1 in the southern segment
+(Point B), with statistically significant weakening extending northward along the
+coast. This accounts to 55% weakening in the strength of EICC over the last three
+decades at this point. Averaged across all the points, a 30% weakening of the EICC
+strength is noticed. While there is considerable decadal variability superimposed on
+these records, the overall trajectory points toward a systematic deceleration of the
+boundary current. The significance of this multidecadal weakening within the
+context of our study is twofold. First, it demonstrates the unique capability of the
+reprocessed, Ekman-corrected coastal altimetry dataset to capture low-frequency,
+long-term climate signals right up to the continental slope, a domain where
+standard gridded altimetry products traditionally fail. Second, it highlights a critical
+shift in the physical oceanography of the Bay of Bengal. The EICC is a complex
+western boundary current primarily driven by a combination of local alongshore
+wind stress, interior Ekman pumping over the Bay of Bengal, and remote equatorial
+forcing transmitted via coastal Kelvin waves (McCreary et al., 1996; Shankar et al.,
+1996). A sustained multidecadal weakening suggests a fundamental alteration in
+one or more of these driving mechanisms.
+Driving Mechanisms of the Multidecadal EICC Weakening:
+Having identified a robust multidecadal deceleration in the strength of the East India
+Coastal Current (EICC), it is imperative to investigate the large-scale forcing
+mechanisms responsible for this trend. The EICC is a dynamically complex
+boundary current; analytical and numerical modeling studies (e.g., McCreary et al.,
+1996; Shankar et al., 1996) have established that its seasonal and low-frequency
+variability is not solely locally driven. Instead, it is governed by a combination of
+three primary forcings: (1) interior Ekman pumping over the Bay of Bengal, which
+generates westward-propagating baroclinic Rossby waves; (2) local alongshore
+wind stress along the east coast of India; and (3) remote equatorial Indian Ocean
+wind stress, which excites equatorial Kelvin waves that impinge on the eastern
+boundary and reflect as coastal trapped Kelvin waves propagating up the perimeter
+of the Bay. To determine which of these mechanisms is driving the observed
+multidecadal weakening of the EICC, Figure 7 isolates and analyzes the long-term
+
+variability of these specific forcing regions. The left panel defines the spatial masks
+used for the area-averaged analysis: the equatorial waveguide (5S–5N, green
+hatching) representing the remote forcing domain; the interior Bay of Bengal gyre
+region (blue hatching) representing the Ekman pumping domain; and the western
+boundary along-shore region (red hatching) representing the local wind forcing
+domain. The right panels (a–d) display the corresponding area-averaged monthly
+time series. To maintain consistency with the EICC velocity analysis and to isolate
+the multidecadal signals from the highly energetic seasonal and interannual (e.g.,
+Indian Ocean Dipole) fluctuations, a 500-day low-pass filter was applied to all time
+series. Panel (b) illustrates the low-pass filtered Sea Level Anomaly (SLA) over the
+interior Bay of Bengal. The pronounced positive trend reflects the basin-wide sealevel rise, a well-documented consequence of overall warming in the Indian Ocean
+(Schott et al., 2009, Srinivasu U, 2017). However, the dynamics of the coastal
+current are dictated by the horizontal pressure gradients driven by the wind field,
+which are examined in the remaining panels. Panels (a), (c), and (d) present the
+low-frequency variability and linear trends of the physical forcing parameters:
+Ekman pumping in the interior, local alongshore wind stress magnitude, and
+equatorial wind stress magnitude, respectively. The data reveal a discernible
+downward trend in the magnitude of both the local alongshore wind stress (Panel c)
+and the remote equatorial wind stress (Panel d). The significance of this figure to
+the current study is profound, as it provides the dynamical closure to the
+observations made in Figure 6. The multidecadal weakening of the EICC is not an
+isolated coastal phenomenon but rather a direct dynamic response to a basin-wide
+relaxation of its primary atmospheric drivers. A reduction in the equatorial wind
+stress directly diminishes the amplitude of the eastward-propagating equatorial
+Kelvin waves, subsequently leading to weaker coastally trapped waves traveling
+around the Bay of Bengal. Concurrently, the weakening of the local alongshore
+winds reduces the direct momentum transfer to the boundary current. These
+findings corroborate recent climate studies which suggest that asymmetric warming
+across the Indian Ocean has led to a dampening of the overall monsoonal wind
+circulation (e.g., Roxy et al., 2015). Consequently, the novel coastal altimetry
+dataset not only resolves the near-shore current dynamics but successfully
+captures the boundary current's integrated response to shifting basin-wide climatic
+forcing.
+Because the EICC is the primary western boundary current of the basin, the
+consequences of a weakening EICC are profound and multifold. The EICC plays a
+critical role in the mass budget of the Bay of Bengal, particularly during its
+equatorward phase (post-monsoon to winter), when it exports massive volumes of
+low-salinity riverine water southward along the eastern coast of India. A weakening
+of this southward flow would reduce the efficiency of this freshwater export.
+Consequently, this could lead to a progressive freshening and increased
+
+stratification in the northern Bay, while the southern Bay and the southeastern
+Arabian Sea might experience higher-than-normal salinities.
+During the southwest monsoon, the poleward-flowing EICC acts in concert with
+local southwesterly winds to drive coastal upwelling, drawing cold, nutrient-rich
+subsurface waters into the euphotic zone. A weakening of both the EICC and its
+primary atmospheric drivers implies a reduction in the intensity of this upwelling.
+This would suppress primary productivity along the coast, fundamentally altering
+the coastal biogeochemical cycling and potentially impacting regional fisheries that
+rely on these seasonal nutrient pulses.
+
+Acknowledgments:
+We thank the Director, INCOIS, Hyderabad (Ministry of Earth Sciences,
+Government of India) for encouragement and support. All the data analysis and
+visualization is done using python with extensive usage of the library xarray among
+other libraries. Authors would like to thank the open source developers and
+maintainers of these libraries.
+
+References:
+Amol, P., Shankar, D., Aparna, S.G., Shenoi, S.S.C., Fernando, V., Shetye, S.R., Mukherjee, A.,
+Agarvadekar, Y., Khalap, S., Satelkar, N.P., 2012. Observational evidence from direct
+current measurements for propagation of remotely forced waves on the shelf off the west
+coast of India. J. Geophys. Res. Oceans 117, 2011JC007606.
+https://doi.org/10.1029/2011JC007606
+Arunraj, K.S., n.d. QA/QC Manual for Coastal HF Radar - Indian Coastal Ocean Radar Network
+(ICORN).
+Birol, F., Fuller, N., Lyard, F., Cancet, M., Niño, F., Delebecque, C., Fleury, S., Toublanc, F.,
+Melet, A., Saraceno, M., Léger, F., 2017. Coastal applications from nadir altimetry:
+Example of the X-TRACK regional products. Adv. Space Res. 59, 936–953.
+https://doi.org/10.1016/j.asr.2016.11.005
+Birol, F., Léger, F., Passaro, M., Cazenave, A., Niño, F., Calafat, F.M., Shaw, A., Legeais, J.-F.,
+Gouzenes, Y., Schwatke, C., Benveniste, J., 2021. The X-TRACK/ALES multi-mission
+processing system: New advances in altimetry towards the coast. Adv. Space Res. 67, 2398–
+2415. https://doi.org/10.1016/j.asr.2021.01.049
+Bouffard, J., Pascual, A., Ruiz, S., Faugère, Y., Tintoré, J., 2010. Coastal and mesoscale dynamics
+characterization using altimetry and gliders: A case study in the Balearic Sea. J. Geophys.
+Res. Oceans 115, 2009JC006087. https://doi.org/10.1029/2009JC006087
+Cazenave, A., Gouzenes, Y., Birol, F., Leger, F., Passaro, M., Calafat, F.M., Shaw, A., Nino, F.,
+Legeais, J.F., Oelsmann, J., Restano, M., Benveniste, J., 2022. Sea level along the world’s
+coastlines can be measured by a network of virtual altimetry stations. Commun. Earth
+Environ. 3, 117. https://doi.org/10.1038/s43247-022-00448-z
+Chelton, D.B., Esbensen, S.K., Schlax, M.G., Thum, N., Freilich, M.H., Wentz, F.J., Gentemann,
+C.L., McPhaden, M.J., Schopf, P.S., 2001. Observations of Coupling between Surface Wind
+Stress and Sea Surface Temperature in the Eastern Tropical Pacific. J. Clim. 14, 1479–1498.
+https://doi.org/10.1175/1520-0442(2001)014%3C1479:OOCBSW%3E2.0.CO;2
+Cleveland, W.S., 1979. Robust Locally Weighted Regression and Smoothing Scatterplots. J. Am.
+Stat. Assoc.
+Durand, F., Shankar, D., Birol, F., Shenoi, S.S.C., 2009. Spatiotemporal structure of the East India
+Coastal Current from satellite altimetry. J. Geophys. Res. Oceans 114, 2008JC004807.
+https://doi.org/10.1029/2008JC004807
+Durand, F., Shankar, D., Birol, F., Shenoi, S.S.C., 2008. Estimating boundary currents from satellite
+altimetry: A case study for the east coast of India. J. Oceanogr. 64, 831–845.
+https://doi.org/10.1007/s10872-008-0069-2
+Dohan, K., Maximenko, N., 2010. Monitoring Ocean Currents with Satellite Sensors.
+Oceanography 23, 94–103. https://doi.org/10.5670/oceanog.2010.08
+Jebri, F., Birol, F., Zakardjian, B., Bouffard, J., Sammari, C., 2016. Exploiting coastal altimetry to
+improve the surface circulation scheme over the central Mediterranean Sea. J. Geophys. Res.
+Oceans 121, 4888–4909. https://doi.org/10.1002/2016JC011961
+Jérôme Benveniste, Florence Birol, Francisco Calafat, Anny Cazenave, Habib Dieng, et al.. Coastal
+sea level anomalies and associated trends from Jason satellite altimetry over 2002–2018.
+Scientific Data , 2020, 7 (1), pp.357. ⟨10.1038/s41597-020-00694-w⟩. ⟨hal-04631951⟩
+Johnson, E.S., Bonjean, F., Lagerloef, G.S.E., Gunn, J.T., Mitchum, G.T., 2007. Validation and
+Error Analysis of OSCAR Sea Surface Currents. J. Atmospheric Ocean. Technol. 24, 688–
+701. https://doi.org/10.1175/JTECH1971.1
+Karney, C.F.F., 2013. Algorithms for geodesics. J. Geod. 87, 43–55.
+https://doi.org/10.1007/s00190-012-0578-z
+
+Lagerloef, G.S.E., Mitchum, G.T., Lukas, R.B., Niiler, P.P., 1999. Tropical Pacific near‐surface
+currents estimated from altimeter, wind, and drifter data. J. Geophys. Res. Oceans 104,
+23313–23326. https://doi.org/10.1029/1999JC900197
+Le Hénaff, M., Roblou, L., Bouffard, J., 2011. Characterizing the Navidad current interannual
+variability using coastal altimetry. Ocean Dyn. 61, 425–437. https://doi.org/10.1007/s10236010-0360-9
+Liu, Y., Weisberg, R.H., Vignudelli, S., Roblou, L., Merz, C.R., 2012. Comparison of the XTRACK altimetry estimated currents with moored ADCP and HF radar observations on the
+West Florida Shelf. Adv. Space Res. 50, 1085–1098.
+https://doi.org/10.1016/j.asr.2011.09.012
+McPhaden, M.J., Meyers, G., Ando, K., Masumoto, Y., Murty, V.S.N., Ravichandran, M.,
+Syamsudin, F., Vialard, J., Yu, L., Yu, W., 2009. RAMA: The Research Moored Array for
+African–Asian–Australian Monsoon Analysis and Prediction *. Bull. Am. Meteorol. Soc. 90,
+459–480. https://doi.org/10.1175/2008BAMS2608.1
+Mukherjee, A., Shankar, D., Fernando, V., Amol, P., Aparna, S.G., Fernandes, R., Michael, G.S.,
+Khalap, S.T., Satelkar, N.P., Agarvadekar, Y., Gaonkar, M.G., Tari, A.P., Kankonkar, A.,
+Vernekar, S., 2014. Observed seasonal and intraseasonal variability of the East India Coastal
+Current on the continental slope. J. Earth Syst. Sci. 123, 1197–1232.
+https://doi.org/10.1007/s12040-014-0471-7
+Paul, B., Baduru, B., Paul, A., Francis, P.A., Shetye, S.R., 2021. Absence of the annual cycle in
+shelf current inshore of the East Indian Coastal Current. Cont. Shelf Res. 215, 104355.
+https://doi.org/10.1016/j.csr.2021.104355
+Passaro, M., Cipollini, P., Vignudelli, S., Quartly, G.D., Snaith, H.M., 2014. ALES: A multimission adaptive subwaveform retracker for coastal and open ocean altimetry. Remote Sens.
+Environ. 145, 173–189. https://doi.org/10.1016/j.rse.2014.02.008
+Parke, M.E., Stewart, R.H., Farless, D.L., Cartwright, D.E., 1987. On the choice of orbits for an
+altimetric satellite to study ocean circulation and tides. J. Geophys. Res. Oceans 92, 11693–
+11707. https://doi.org/10.1029/JC092iC11p11693
+Powell, B.S., Leben, R.R., 2004. An Optimal Filter for Geostrophic Mesoscale Currents from
+Along-Track Satellite Altimetry. J. Atmospheric Ocean. Technol. 21, 1633–1642.
+https://doi.org/10.1175/1520-0426(2004)021%3C1633:AOFFGM%3E2.0.CO;2
+Quartly, G.D., Legeais, J.-F., Ablain, M., Zawadzki, L., Fernandes, M.J., Rudenko, S., Carrère, L.,
+García, P.N., Cipollini, P., Andersen, O.B., Poisson, J.-C., Mbajon Njiche, S., Cazenave, A.,
+Benveniste, J., 2017. A new phase in the production of quality-controlled sea level data.
+Earth Syst. Sci. Data 9, 557–572. https://doi.org/10.5194/essd-9-557-2017
+Rio, M. ‐H., Mulet, S., Picot, N., 2014. Beyond GOCE for the ocean circulation estimate:
+Synergetic use of altimetry, gravimetry, and in situ data provides new insight into
+geostrophic and Ekman currents. Geophys. Res. Lett. 41, 8918–8925.
+https://doi.org/10.1002/2014GL061773
+Roblou, L., Lamouroux, J., Bouffard, J., Lyard, F., Le Hénaff, M., Lombard, A., Marsaleix, P., De
+Mey, P., Birol, F., 2011. Post-processing Altimeter Data Towards Coastal Applications and
+Integration into Coastal Models, in: Vignudelli, S., Kostianoy, A.G., Cipollini, P.,
+Benveniste, J. (Eds.), Coastal Altimetry. Springer Berlin Heidelberg, Berlin, Heidelberg, pp.
+217–246. https://doi.org/10.1007/978-3-642-12796-0_9
+Roxy, M.K., Ritika, K., Terray, P., Murtugudde, R., Ashok, K., Goswami, B.N., 2015. Drying of
+Indian subcontinent by rapid Indian Ocean warming and a weakening land-sea thermal
+gradient. Nat. Commun. 6, 7423. https://doi.org/10.1038/ncomms8423
+Schott, F.A., Xie, S., McCreary, J.P., 2009. Indian Ocean circulation and climate variability. Rev.
+Geophys. 47, 2007RG000245. https://doi.org/10.1029/2007RG000245
+Shankar, D., McCreary, J.P., Han, W., Shetye, S.R., 1996. Dynamics of the East India Coastal
+Current: 1. Analytic solutions forced by interior Ekman pumping and local alongshore
+winds. J. Geophys. Res. Oceans 101, 13975–13991. https://doi.org/10.1029/96JC00559
+
+Srinivasu, U., Ravichandran, M., Han, W., Sivareddy, S., Rahman, H., Li, Y., Nayak, S., 2017.
+Causes for the reversal of North Indian Ocean decadal sea level trend in recent two decades.
+Clim. Dyn. 49, 3887–3904. https://doi.org/10.1007/s00382-017-3551-y
+Strub, P.T., Chereskin, T.K., Niiler, P.P., James, C., Levine, M.D., 1997. Altimeter‐derived
+variability of surface velocities in the California Current System: 1. Evaluation of TOPEX
+altimeter velocity resolution. J. Geophys. Res. Oceans 102, 12727–12748.
+https://doi.org/10.1029/97JC00448
+Sudre, J., Maes, C., Garçon, V., 2013. On the global estimates of geostrophic and Ekman surface
+currents. Limnol. Oceanogr. Fluids Environ. 3, 1–20. https://doi.org/10.1215/215736892071927
+Vignudelli, S., Cipollini, P., Roblou, L., Lyard, F., Gasparini, G.P., Manzella, G., Astraldi, M.,
+2005. Improved satellite altimetry in coastal systems: Case study of the Corsica Channel
+(Mediterranean Sea): IMPROVED SATELLITE ALTIMETRY IN COASTAL SYSTEMS.
+Geophys. Res. Lett. 32, n/a-n/a. https://doi.org/10.1029/2005GL022602
+Wang, W., Zhou, H., Zheng, S., Lü, G., Zhou, L., 2023. Ocean surface currents estimated from
+satellite remote sensing data based on a global hexagonal grid. Int. J. Digit. Earth 16, 1073–
+1093. https://doi.org/10.1080/17538947.2023.2192003
+Yuan, Y., Castelao, R.M., He, R., 2017. Variability in along-shelf and cross-shelf circulation in the
+South Atlantic Bight. Cont. Shelf Res. 134, 52–62. https://doi.org/10.1016/j.csr.2017.01.006
+
+
